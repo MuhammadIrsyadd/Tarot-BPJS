@@ -14,8 +14,28 @@ export const metadata: Metadata = {
   description: "Tarot tarot an by syd",
   icons: {
     icon: "/logo.svg",
-    shortcut: "/logo.svg",
+    shortcut: "/logo.svg",    apple: "/logo.svg",
   },
+  openGraph: {
+    title: "Tarot BPJS",
+    description: "Mystical Tarot Reading",
+    url: "https://tarot-bpjs.vercel.app",
+    siteName: "Tarot BPJS",
+    images: [
+      {
+        url: "/logo.svg",
+        width: 512,
+        height: 512,
+        alt: "Tarot BPJS logo",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tarot BPJS",
+    description: "Mystical Tarot Reading",
+    images: ["/logo.svg"],  },
 };
 
 export default function RootLayout({
