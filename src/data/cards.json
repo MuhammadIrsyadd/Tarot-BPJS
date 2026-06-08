@@ -1,0 +1,1406 @@
+{
+  "the-fool": {
+    "name": "Sang Pengelana (The Fool)",
+    "number": 0,
+    "arcana": "major",
+    "suit": null,
+    "element": "Udara",
+    "keywords": ["Permulaan baru", "Kepolosan", "Petualangan", "Kebebasan"],
+    "upright": {
+      "general": "Awal dari perjalanan baru yang penuh potensi dan optimisme.",
+      "love": "Hubungan baru yang spontan atau fase baru yang menyegarkan.",
+      "career": "Peluang kerja baru atau ide kreatif yang berani diambil."
+    },
+    "reversed": {
+      "general": "Kecerobohan, ketakutan akan risiko, atau penundaan yang tidak perlu.",
+      "love": "Komitmen yang belum matang atau risiko emosional yang terlalu besar.",
+      "career": "Keputusan karir yang terburu-buru tanpa perencanaan yang matang."
+    }
+  },
+  "the-magician": {
+    "name": "Sang Penyihir (The Magician)",
+    "number": 1,
+    "arcana": "major",
+    "suit": null,
+    "element": "Udara",
+    "keywords": ["Manifestasi", "Kekuatan diri", "Keahlian", "Konsentrasi"],
+    "upright": {
+      "general": "Memiliki semua alat yang dibutuhkan untuk mewujudkan impian menjadi kenyataan.",
+      "love": "Daya tarik yang kuat dan kemampuan untuk membangun hubungan yang diinginkan.",
+      "career": "Keberhasilan dalam proyek melalui keahlian dan fokus yang tajam."
+    },
+    "reversed": {
+      "general": "Manipulasi, bakat yang sia-sia, atau keraguan diri yang menghambat.",
+      "love": "Ketidaktulusan dalam hubungan atau komunikasi yang menyesatkan.",
+      "career": "Penyalahgunaan kekuasaan atau kurangnya fokus pada target kerja."
+    }
+  },
+  "the-high-priestess": {
+    "name": "Sang Pendeta Agung (The High Priestess)",
+    "number": 2,
+    "arcana": "major",
+    "suit": null,
+    "element": "Air",
+    "keywords": ["Intuisi", "Misteri", "Alam Bawah Sadar", "Kebijaksanaan"],
+    "upright": {
+      "general": "Saatnya mendengarkan suara hati dan mempercayai insting Anda.",
+      "love": "Kedalaman emosional dan hubungan spiritual yang kuat dengan pasangan.",
+      "career": "Pengetahuan tersembunyi akan membantu Anda; jangan terburu-buru mengambil keputusan."
+    },
+    "reversed": {
+      "general": "Intuisi yang terabaikan, rahasia yang terungkap, atau kedangkalan.",
+      "love": "Ketegangan emosional atau kurangnya kejujuran dalam perasaan.",
+      "career": "Informasi yang hilang atau mengabaikan tanda-tanda penting di tempat kerja."
+    }
+  },
+  "the-empress": {
+    "name": "Sang Permaisuri (The Empress)",
+    "number": 3,
+    "arcana": "major",
+    "suit": null,
+    "element": "Tanah",
+    "keywords": ["Kelimpahan", "Kesuburan", "Alam", "Kreativitas"],
+    "upright": {
+      "general": "Masa pertumbuhan, kemakmuran, dan kenyamanan material.",
+      "love": "Hubungan yang penuh kasih, kehangatan, dan potensi kehamilan atau keluarga.",
+      "career": "Proyek yang berkembang pesat dan lingkungan kerja yang mendukung."
+    },
+    "reversed": {
+      "general": "Ketergantungan, hambatan kreatif, atau kurangnya perawatan diri.",
+      "love": "Sikap posesif atau masalah dalam pengasuhan/hubungan keluarga.",
+      "career": "Kurangnya motivasi atau merasa tidak dihargai atas hasil kerja keras."
+    }
+  },
+  "the-emperor": {
+    "name": "Sang Kaisar (The Emperor)",
+    "number": 4,
+    "arcana": "major",
+    "suit": null,
+    "element": "Api",
+    "keywords": ["Otoritas", "Struktur", "Perlindungan", "Logika"],
+    "upright": {
+      "general": "Kepemimpinan yang kuat dan pembentukan struktur yang stabil.",
+      "love": "Hubungan yang stabil, disiplin, dan saling melindungi.",
+      "career": "Pencapaian posisi kepemimpinan atau keberhasilan melalui organisasi."
+    },
+    "reversed": {
+      "general": "Tirani, kekakuan berlebih, atau kurangnya disiplin diri.",
+      "love": "Sifat mendominasi yang berlebihan atau ketidakstabilan emosional.",
+      "career": "Konflik dengan atasan atau manajemen yang buruk."
+    }
+  },
+  "the-hierophant": {
+    "name": "Sang Hierophant (The Hierophant)",
+    "number": 5,
+    "arcana": "major",
+    "suit": null,
+    "element": "Tanah",
+    "keywords": ["Tradisi", "Spiritualitas", "Kepatuhan", "Pendidikan"],
+    "upright": {
+      "general": "Mengikuti norma yang berlaku atau mencari bimbingan spiritual.",
+      "love": "Hubungan formal atau komitmen tradisional seperti pernikahan.",
+      "career": "Bekerja dalam institusi besar atau mengikuti prosedur yang sudah ada."
+    },
+    "reversed": {
+      "general": "Pemberontakan, ketidakortodoksan, atau tantangan terhadap status quo.",
+      "love": "Ketidakcocokan nilai-nilai dasar atau melanggar tradisi keluarga.",
+      "career": "Cara kerja yang tidak konvensional atau ketidakpuasan terhadap sistem."
+    }
+  },
+  "the-lovers": {
+    "name": "Sang Pencinta (The Lovers)",
+    "number": 6,
+    "arcana": "major",
+    "suit": null,
+    "element": "Udara",
+    "keywords": ["Cinta", "Harmoni", "Pilihan", "Keselarasan"],
+    "upright": {
+      "general": "Koneksi yang mendalam dan perlunya membuat pilihan penting.",
+      "love": "Hubungan yang harmonis dan komitmen yang tulus.",
+      "career": "Kemitraan bisnis yang menguntungkan atau memilih jalur karir baru."
+    },
+    "reversed": {
+      "general": "Ketidakharmonisan, ketidakseimbangan, atau pilihan yang salah.",
+      "love": "Konflik nilai atau keraguan dalam hubungan asmara.",
+      "career": "Kerjasama tim yang buruk atau keputusan bisnis yang kurang matang."
+    }
+  },
+  "the-chariot": {
+    "name": "Sang Kereta (The Chariot)",
+    "number": 7,
+    "arcana": "major",
+    "suit": null,
+    "element": "Air",
+    "keywords": ["Kemenangan", "Tekad", "Kendali", "Keberhasilan"],
+    "upright": {
+      "general": "Keberhasilan melalui kerja keras, tekad, dan disiplin diri.",
+      "love": "Mengatasi hambatan bersama pasangan dengan tekad yang kuat.",
+      "career": "Kemajuan pesat dalam karir dan pencapaian target yang sulit."
+    },
+    "reversed": {
+      "general": "Kurang kendali, agresi, atau kehilangan arah tujuan.",
+      "love": "Argumen yang tidak perlu atau kehilangan kendali atas emosi.",
+      "career": "Kurangnya disiplin yang menyebabkan kegagalan proyek."
+    }
+  },
+  "strength": {
+    "name": "Kekuatan (Strength)",
+    "number": 8,
+    "arcana": "major",
+    "suit": null,
+    "element": "Api",
+    "keywords": ["Keberanian", "Kesabaran", "Kasih Sayang", "Keteguhan"],
+    "upright": {
+      "general": "Kekuatan batin dan kemampuan menghadapi tantangan dengan tenang.",
+      "love": "Kesabaran dan kelembutan dalam menangani masalah hubungan.",
+      "career": "Kepercayaan diri untuk menghadapi tantangan profesional dengan integritas."
+    },
+    "reversed": {
+      "general": "Ketakutan, keraguan diri, atau kurangnya kontrol diri.",
+      "love": "Ketidakstabilan emosional atau hilangnya rasa percaya pada pasangan.",
+      "career": "Keraguan dalam mengambil keputusan atau merasa kewalahan oleh tugas."
+    }
+  },
+  "the-hermit": {
+    "name": "Sang Pertapa (The Hermit)",
+    "number": 9,
+    "arcana": "major",
+    "suit": null,
+    "element": "Tanah",
+    "keywords": ["Introspeksi", "Kesendirian", "Pencarian Kebenaran", "Bimbingan"],
+    "upright": {
+      "general": "Waktunya untuk menyendiri dan merenungkan makna hidup yang lebih dalam.",
+      "love": "Fase refleksi diri dalam hubungan atau memilih untuk sendiri sementara waktu.",
+      "career": "Mencari mentor atau mengevaluasi kembali arah karir Anda secara mendalam."
+    },
+    "reversed": {
+      "general": "Isolasi yang berlebihan, kesepian, atau penolakan terhadap nasihat.",
+      "love": "Rasa terasing dari pasangan atau ketakutan akan kesendirian.",
+      "career": "Kurangnya komunikasi tim atau mengabaikan saran yang berguna."
+    }
+  },
+  "wheel-of-fortune": {
+    "name": "Roda Keberuntungan (Wheel of Fortune)",
+    "number": 10,
+    "arcana": "major",
+    "suit": null,
+    "element": "Api",
+    "keywords": ["Perubahan", "Keberuntungan", "Takdir", "Siklus"],
+    "upright": {
+      "general": "Perubahan nasib ke arah yang lebih baik; segalanya sedang berputar.",
+      "love": "Perubahan tak terduga dalam kehidupan asmara, biasanya positif.",
+      "career": "Peluang baru yang datang secara tiba-tiba dan menguntungkan."
+    },
+    "reversed": {
+      "general": "Nasib buruk, hambatan tak terduga, atau penolakan terhadap perubahan.",
+      "love": "Nasib yang kurang menguntungkan atau pengulangan pola lama yang buruk.",
+      "career": "Penundaan dalam kemajuan kerja atau tantangan luar yang sulit dikendalikan."
+    }
+  },
+  "justice": {
+    "name": "Keadilan (Justice)",
+    "number": 11,
+    "arcana": "major",
+    "suit": null,
+    "element": "Udara",
+    "keywords": ["Keadilan", "Kebenaran", "Sebab-Akibat", "Keseimbangan"],
+    "upright": {
+      "general": "Setiap tindakan memiliki konsekuensi; keadilan akan ditegakkan.",
+      "love": "Kejujuran dan keadilan dalam hubungan; keseimbangan antara memberi dan menerima.",
+      "career": "Keputusan profesional yang adil dan penyelesaian masalah hukum/kontrak."
+    },
+    "reversed": {
+      "general": "Ketidakadilan, ketidakjujuran, atau kurangnya tanggung jawab.",
+      "love": "Ketidakseimbangan dalam hubungan atau menyembunyikan kebenaran.",
+      "career": "Kecurangan di tempat kerja atau hasil yang tidak adil."
+    }
+  },
+  "the-hanged-man": {
+    "name": "Sang Pria Tergantung (The Hanged Man)",
+    "number": 12,
+    "arcana": "major",
+    "suit": null,
+    "element": "Air",
+    "keywords": ["Perspektif baru", "Pengorbanan", "Penundaan", "Pelepasan"],
+    "upright": {
+      "general": "Berhenti sejenak untuk melihat situasi dari sudut pandang yang berbeda.",
+      "love": "Menunggu saat yang tepat atau mengorbankan ego demi hubungan.",
+      "career": "Menunda keputusan besar untuk mendapatkan kejelasan lebih lanjut."
+    },
+    "reversed": {
+      "general": "Stagnasi, ketidakmampuan untuk melepaskan, atau pengorbanan sia-sia.",
+      "love": "Bertahan dalam hubungan yang tidak sehat atau menunda yang tidak perlu.",
+      "career": "Membuang-buang waktu pada strategi yang salah atau keras kepala."
+    }
+  },
+  "death": {
+    "name": "Kematian (Death)",
+    "number": 13,
+    "arcana": "major",
+    "suit": null,
+    "element": "Air",
+    "keywords": ["Transformasi", "Akhir", "Kelahiran Kembali", "Transisi"],
+    "upright": {
+      "general": "Berakhirnya sebuah fase untuk memberikan ruang bagi sesuatu yang baru.",
+      "love": "Berakhirnya pola lama atau hubungan yang bertransformasi secara mendalam.",
+      "career": "Perubahan drastis dalam karir atau meninggalkan pekerjaan lama."
+    },
+    "reversed": {
+      "general": "Ketakutan akan perubahan, keterlambatan transisi, atau stagnasi.",
+      "love": "Ketidakmampuan untuk move on atau menolak mengakhiri hubungan beracun.",
+      "career": "Enggan beradaptasi dengan sistem baru atau perubahan industri."
+    }
+  },
+  "temperance": {
+    "name": "Keseimbangan (Temperance)",
+    "number": 14,
+    "arcana": "major",
+    "suit": null,
+    "element": "Api",
+    "keywords": ["Moderasi", "Kesabaran", "Harmoni", "Alkimia"],
+    "upright": {
+      "general": "Menemukan jalan tengah dan menjaga keseimbangan dalam segala hal.",
+      "love": "Hubungan yang tenang, harmonis, dan penuh pengertian.",
+      "career": "Menggabungkan ide-ide berbeda dengan sukses dan menjaga ritme kerja."
+    },
+    "reversed": {
+      "general": "Ketidakseimbangan, kelebihan, atau kurangnya visi jangka panjang.",
+      "love": "Konflik karena kurangnya kompromi atau ketidakstabilan emosi.",
+      "career": "Bekerja secara impulsif atau kurangnya koordinasi dalam proyek."
+    }
+  },
+  "the-devil": {
+    "name": "Sang Iblis (The Devil)",
+    "number": 15,
+    "arcana": "major",
+    "suit": null,
+    "element": "Tanah",
+    "keywords": ["Keterikatan", "Ketergantungan", "Materialisme", "Sisi Gelap"],
+    "upright": {
+      "general": "Terjebak dalam kebiasaan buruk, obsesi, atau ilusi materi.",
+      "love": "Obsesi yang tidak sehat, godaan, atau hubungan yang didasarkan pada nafsu.",
+      "career": "Merasa terjebak dalam pekerjaan yang tidak memuaskan demi uang."
+    },
+    "reversed": {
+      "general": "Pelepasan dari belenggu, kesadaran diri, dan kebebasan baru.",
+      "love": "Memutuskan rantai hubungan yang merusak atau mengatasi obsesi.",
+      "career": "Meninggalkan lingkungan kerja yang toksik atau mengubah prioritas."
+    }
+  },
+  "the-tower": {
+    "name": "Sang Menara (The Tower)",
+    "number": 16,
+    "arcana": "major",
+    "suit": null,
+    "element": "Api",
+    "keywords": ["Kehancuran tiba-tiba", "Perubahan drastis", "Kebenaran yang mengejutkan"],
+    "upright": {
+      "general": "Runtuhnya struktur yang tidak stabil untuk membangun fondasi yang lebih kuat.",
+      "love": "Perubahan mendadak yang mengguncang hubungan secara mendalam.",
+      "career": "Kehilangan pekerjaan atau kegagalan proyek yang memaksa awal baru."
+    },
+    "reversed": {
+      "general": "Menunda krisis, menghindari bencana, atau pembersihan internal.",
+      "love": "Menghindari perpisahan yang diperlukan atau ketegangan yang tertahan.",
+      "career": "Takut akan perubahan besar atau bertahan di posisi yang goyah."
+    }
+  },
+  "the-star": {
+    "name": "Sang Bintang (The Star)",
+    "number": 17,
+    "arcana": "major",
+    "suit": null,
+    "element": "Udara",
+    "keywords": ["Harapan", "Inspirasi", "Penyembuhan", "Kedamaian"],
+    "upright": {
+      "general": "Masa pemulihan dan harapan baru setelah masa-masa sulit.",
+      "love": "Kepercayaan diri dalam cinta dan hubungan yang penuh kedamaian.",
+      "career": "Visi kreatif yang cerah dan masa depan profesional yang menjanjikan."
+    },
+    "reversed": {
+      "general": "Keputusasaan, kurangnya inspirasi, atau kekecewaan.",
+      "love": "Kehilangan harapan dalam cinta atau merasa tidak dicintai.",
+      "career": "Kurangnya motivasi atau merasa pesimis terhadap prospek karir."
+    }
+  },
+  "the-moon": {
+    "name": "Sang Rembulan (The Moon)",
+    "number": 18,
+    "arcana": "major",
+    "suit": null,
+    "element": "Air",
+    "keywords": ["Ilusi", "Ketakutan", "Ketidakpastian", "Intuisi"],
+    "upright": {
+      "general": "Segalanya mungkin tidak seperti yang terlihat; hadapi ketakutan Anda.",
+      "love": "Ketidakpastian dalam hubungan atau perasaan yang membingungkan.",
+      "career": "Situasi kerja yang tidak jelas atau adanya agenda tersembunyi."
+    },
+    "reversed": {
+      "general": "Kebenaran terungkap, mengatasi ketakutan, atau kejelasan.",
+      "love": "Klarifikasi masalah asmara atau berakhirnya masa kebingungan.",
+      "career": "Fakta-fakta mulai muncul dan ketidakpastian mulai berkurang."
+    }
+  },
+  "the-sun": {
+    "name": "Sang Surya (The Sun)",
+    "number": 19,
+    "arcana": "major",
+    "suit": null,
+    "element": "Api",
+    "keywords": ["Kebahagiaan", "Keberhasilan", "Vitalitas", "Kejelasan"],
+    "upright": {
+      "general": "Masa kegembiraan total, kesuksesan, dan kelimpahan energi.",
+      "love": "Hubungan yang ceria, penuh kasih, dan saling mendukung.",
+      "career": "Pencapaian besar dan pengakuan atas hasil kerja keras Anda."
+    },
+    "reversed": {
+      "general": "Kesedihan sementara, kurangnya kejelasan, atau kesuksesan yang tertunda.",
+      "love": "Masalah kecil yang menutupi kebahagiaan atau kurangnya antusiasme.",
+      "career": "Keberhasilan yang tidak sesuai harapan atau merasa kurang dihargai."
+    }
+  },
+  "judgement": {
+    "name": "Penghakiman (Judgement)",
+    "number": 20,
+    "arcana": "major",
+    "suit": null,
+    "element": "Api",
+    "keywords": ["Panggilan", "Kebangkitan", "Absolusi", "Evaluasi"],
+    "upright": {
+      "general": "Panggilan batin untuk membuat perubahan besar dalam hidup.",
+      "love": "Evaluasi serius dalam hubungan untuk masa depan yang lebih baik.",
+      "career": "Menilai kembali jalur karir dan membuat keputusan penting."
+    },
+    "reversed": {
+      "general": "Keraguan diri, penundaan keputusan, atau mengabaikan panggilan.",
+      "love": "Menghindari pembicaraan serius atau terjebak di masa lalu.",
+      "career": "Kehilangan kesempatan karena ketidakyakinan atau evaluasi yang buruk."
+    }
+  },
+  "the-world": {
+    "name": "Sang Dunia (The World)",
+    "number": 21,
+    "arcana": "major",
+    "suit": null,
+    "element": "Tanah",
+    "keywords": ["Penyelesaian", "Pencapaian", "Integrasi", "Perjalanan"],
+    "upright": {
+      "general": "Siklus yang telah selesai dengan sukses; rasa utuh dan kepuasan.",
+      "love": "Hubungan yang matang atau mencapai tingkat komitmen yang diinginkan.",
+      "career": "Keberhasilan global atau penyelesaian proyek besar dengan gemilang."
+    },
+    "reversed": {
+      "general": "Kurangnya penutupan, hambatan di akhir, atau tugas yang belum selesai.",
+      "love": "Masalah lama yang belum tuntas menghambat perkembangan hubungan.",
+      "career": "Proyek yang tidak kunjung selesai atau merasa belum mencapai potensi penuh."
+    }
+  },
+  "ace-of-wands": {
+    "name": "Ace of Wands (As Tongkat)",
+    "number": 1,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Inspirasi", "Energi", "Gairah", "Awal Baru"],
+    "upright": {
+      "general": "Percikan ide baru dan semangat yang meluap.",
+      "love": "Gairah baru atau awal asmara yang penuh semangat.",
+      "career": "Proyek kreatif baru atau peluang karir yang menarik."
+    },
+    "reversed": {
+      "general": "Hambatan kreatif, kurangnya energi, atau penundaan.",
+      "love": "Kurangnya ketertarikan atau semangat yang memudar.",
+      "career": "Ide yang gagal terwujud atau kurangnya motivasi kerja."
+    }
+  },
+  "two-of-wands": {
+    "name": "Two of Wands (Dua Tongkat)",
+    "number": 2,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Perencanaan", "Keputusan", "Eksplorasi", "Visi"],
+    "upright": {
+      "general": "Merencanakan masa depan dan memperluas cakrawala.",
+      "love": "Mempertimbangkan masa depan hubungan atau mencari petualangan baru.",
+      "career": "Membuat rencana strategis untuk kemajuan karir jangka panjang."
+    },
+    "reversed": {
+      "general": "Ketakutan akan hal yang tidak diketahui, kurang perencanaan.",
+      "love": "Ketidakpastian dalam hubungan atau takut melangkah maju.",
+      "career": "Keputusan karir yang buruk karena kurangnya persiapan."
+    }
+  },
+  "three-of-wands": {
+    "name": "Three of Wands (Tiga Tongkat)",
+    "number": 3,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Ekspansi", "Pandangan Jauh", "Kerjasama", "Keberhasilan"],
+    "upright": {
+      "general": "Melihat hasil dari upaya awal dan bersiap untuk ekspansi.",
+      "love": "Membangun masa depan bersama dan melihat peluang baru.",
+      "career": "Ekspansi bisnis atau peluang karir di luar zona nyaman."
+    },
+    "reversed": {
+      "general": "Penundaan, hambatan tak terduga, atau kurang visi.",
+      "love": "Rencana asmara yang terhambat atau kurangnya kerjasama.",
+      "career": "Kegagalan dalam melihat peluang besar atau masalah logistik."
+    }
+  },
+  "four-of-wands": {
+    "name": "Four of Wands (Empat Tongkat)",
+    "number": 4,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Perayaan", "Stabilitas", "Rumah", "Kegembiraan"],
+    "upright": {
+      "general": "Momen kegembiraan, perayaan keberhasilan, dan stabilitas.",
+      "love": "Pesta pernikahan, pertunangan, atau harmoni dalam keluarga.",
+      "career": "Keberhasilan proyek dan lingkungan kerja yang kondusif."
+    },
+    "reversed": {
+      "general": "Ketegangan di rumah, perayaan yang terganggu, atau ketidakstabilan.",
+      "love": "Masalah dalam keluarga atau kurangnya harmoni dalam hubungan.",
+      "career": "Kurangnya pengakuan atas kerja keras atau konflik di kantor."
+    }
+  },
+  "five-of-wands": {
+    "name": "Five of Wands (Lima Tongkat)",
+    "number": 5,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Kompetisi", "Konflik", "Persaingan", "Perjuangan"],
+    "upright": {
+      "general": "Adanya persaingan atau konflik kepentingan yang membutuhkan solusi.",
+      "love": "Perselisihan kecil atau persaingan memperebutkan perhatian.",
+      "career": "Kompetisi di tempat kerja atau perbedaan pendapat dalam tim."
+    },
+    "reversed": {
+      "general": "Penyelesaian konflik, kerjasama, atau menghindari pertengkaran.",
+      "love": "Berakhirnya pertengkaran asmara atau kompromi.",
+      "career": "Tim yang mulai kompak atau selesainya masalah kantor."
+    }
+  },
+  "six-of-wands": {
+    "name": "Six of Wands (Enam Tongkat)",
+    "number": 6,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Kemenangan", "Pengakuan", "Kebanggaan", "Kemajuan"],
+    "upright": {
+      "general": "Keberhasilan yang diakui oleh publik dan rasa bangga.",
+      "love": "Hubungan yang sukses dan membanggakan di mata orang lain.",
+      "career": "Promosi, kenaikan gaji, atau keberhasilan proyek besar."
+    },
+    "reversed": {
+      "general": "Kurangnya kepercayaan diri, kegagalan publik, atau kesombongan.",
+      "love": "Merasa tidak dihargai dalam hubungan atau kurangnya rasa bangga.",
+      "career": "Kekecewaan dalam karir atau pengakuan yang tertunda."
+    }
+  },
+  "seven-of-wands": {
+    "name": "Seven of Wands (Tujuh Tongkat)",
+    "number": 7,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Pertahanan", "Keteguhan", "Tantangan", "Keberanian"],
+    "upright": {
+      "general": "Mempertahankan posisi Anda di tengah tantangan dan tekanan.",
+      "love": "Memperjuangkan hubungan dari gangguan pihak luar.",
+      "career": "Menghadapi tantangan kerja dengan gigih untuk tetap di atas."
+    },
+    "reversed": {
+      "general": "Kewalahan, menyerah pada tekanan, atau keraguan diri.",
+      "love": "Menyerah pada masalah hubungan atau kurang gigih.",
+      "career": "Merasa kalah dalam persaingan karir atau tidak mampu bertahan."
+    }
+  },
+  "eight-of-wands": {
+    "name": "Eight of Wands (Delapan Tongkat)",
+    "number": 8,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Kecepatan", "Aksi", "Komunikasi", "Perjalanan"],
+    "upright": {
+      "general": "Segala sesuatu bergerak cepat; berita penting akan segera tiba.",
+      "love": "Kemajuan pesat dalam hubungan atau berita asmara yang mendadak.",
+      "career": "Keberhasilan proyek yang cepat dan komunikasi yang lancar."
+    },
+    "reversed": {
+      "general": "Penundaan, kekacauan, atau terburu-buru yang berlebihan.",
+      "love": "Miskomunikasi dalam asmara atau hubungan yang melambat.",
+      "career": "Proyek yang terhambat atau informasi yang terlambat sampai."
+    }
+  },
+  "nine-of-wands": {
+    "name": "Nine of Wands (Sembilan Tongkat)",
+    "number": 9,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Ketangguhan", "Kewaspadaan", "Ketekunan", "Ujian Akhir"],
+    "upright": {
+      "general": "Tetap bertahan meskipun lelah; hampir mencapai garis finish.",
+      "love": "Ketahanan dalam menghadapi masalah hubungan yang berulang.",
+      "career": "Bertahan di tengah beban kerja yang berat demi hasil akhir."
+    },
+    "reversed": {
+      "general": "Kelelahan ekstrem, menyerah, atau defensif berlebihan.",
+      "love": "Terlalu waspada sehingga menghambat kedekatan asmara.",
+      "career": "Kehabisan tenaga di tempat kerja atau merasa gagal sebelum mencoba."
+    }
+  },
+  "ten-of-wands": {
+    "name": "Ten of Wands (Sepuluh Tongkat)",
+    "number": 10,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Beban", "Tanggung Jawab", "Kerja Keras", "Penyelesaian"],
+    "upright": {
+      "general": "Memikul beban yang berat, namun hampir mencapai tujuan.",
+      "love": "Merasa terbebani oleh tanggung jawab dalam hubungan.",
+      "career": "Beban kerja yang berlebihan namun ada potensi penyelesaian."
+    },
+    "reversed": {
+      "general": "Kelelahan mental, delegasi tugas, atau menyerah pada beban.",
+      "love": "Melepaskan beban emosional atau mencari bantuan dalam asmara.",
+      "career": "Meninggalkan pekerjaan yang terlalu berat atau delegasi yang efektif."
+    }
+  },
+  "page-of-wands": {
+    "name": "Page of Wands (Pangeran Tongkat)",
+    "number": 11,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Eksplorasi", "Antusiasme", "Berita", "Penemuan"],
+    "upright": {
+      "general": "Seorang pemuda atau energi yang penuh semangat dan ingin tahu.",
+      "love": "Berita asmara yang menyenangkan atau awal hubungan yang ceria.",
+      "career": "Ide kreatif baru atau kabar baik tentang peluang kerja."
+    },
+    "reversed": {
+      "general": "Kurangnya arah, berita buruk, atau kekanak-kanakan.",
+      "love": "Ketidaktulusan dalam cinta atau berita asmara yang mengecewakan.",
+      "career": "Kurangnya fokus pada tugas baru atau ide yang tidak realistis."
+    }
+  },
+  "knight-of-wands": {
+    "name": "Knight of Wands (Kesatria Tongkat)",
+    "number": 12,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Aksi", "Petualangan", "Ketidaksabaran", "Gairah"],
+    "upright": {
+      "general": "Melangkah maju dengan penuh keberanian dan kecepatan tinggi.",
+      "love": "Pengejaran asmara yang penuh semangat atau hubungan yang impulsif.",
+      "career": "Tindakan cepat dalam bisnis atau perubahan karir yang dinamis."
+    },
+    "reversed": {
+      "general": "Kecerobohan, kemarahan, atau terburu-buru tanpa arah.",
+      "love": "Hubungan yang cepat panas dan cepat dingin; ketidaksabaran.",
+      "career": "Keputusan karir yang tidak dipikirkan matang-matang atau kegagalan aksi."
+    }
+  },
+  "queen-of-wands": {
+    "name": "Queen of Wands (Ratu Tongkat)",
+    "number": 13,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Kepercayaan diri", "Kemandirian", "Daya Tarik", "Optimisme"],
+    "upright": {
+      "general": "Seseorang yang penuh energi, percaya diri, dan memiliki kharisma kuat.",
+      "love": "Hubungan yang penuh semangat dan kepercayaan diri yang tinggi.",
+      "career": "Kepemimpinan yang menginspirasi dan keberhasilan dalam bisnis kreatif."
+    },
+    "reversed": {
+      "general": "Kecemburuan, sifat mendominasi, atau kurangnya kepercayaan diri.",
+      "love": "Persaingan dalam asmara atau kurangnya kejujuran emosional.",
+      "career": "Kurangnya antusiasme kerja atau kepemimpinan yang temperamental."
+    }
+  },
+  "king-of-wands": {
+    "name": "King of Wands (Raja Tongkat)",
+    "number": 14,
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "Api",
+    "keywords": ["Kepemimpinan", "Visi", "Inspirasi", "Wirausaha"],
+    "upright": {
+      "general": "Pemimpin yang visioner dan mampu menggerakkan orang lain.",
+      "love": "Pasangan yang dominan namun protektif dan penuh gairah.",
+      "career": "Keberhasilan besar melalui visi yang kuat dan pengambilan risiko."
+    },
+    "reversed": {
+      "general": "Arogan, tidak toleran, atau kepemimpinan yang buruk.",
+      "love": "Sikap terlalu mendominasi yang merusak hubungan asmara.",
+      "career": "Taktik bisnis yang terlalu agresif atau kurangnya pertimbangan matang."
+    }
+  },
+  "ace-of-cups": {
+    "name": "Ace of Cups (As Piala)",
+    "number": 1,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Cinta", "Intuisi", "Perasaan Baru", "Kelahiran Spiritual"],
+    "upright": {
+      "general": "Luapan emosi positif, awal cinta baru, atau kedamaian batin.",
+      "love": "Awal hubungan yang penuh kasih atau kedalaman perasaan baru.",
+      "career": "Kepuasan kerja atau proyek yang melibatkan kreativitas emosional."
+    },
+    "reversed": {
+      "general": "Emosi yang tertahan, kekosongan hati, atau kekecewaan asmara.",
+      "love": "Kesedihan dalam hubungan atau awal cinta yang bertepuk sebelah tangan.",
+      "career": "Kurangnya kepuasan dalam bekerja atau hambatan kreatif emosional."
+    }
+  },
+  "two-of-cups": {
+    "name": "Two of Cups (Dua Piala)",
+    "number": 2,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Kemitraan", "Daya Tarik", "Harmoni", "Kesepakatan"],
+    "upright": {
+      "general": "Hubungan dua orang yang setara, harmonis, dan penuh pengertian.",
+      "love": "Koneksi asmara yang kuat, pertunangan, atau rasa saling cinta.",
+      "career": "Kemitraan bisnis yang sukses dan kerjasama tim yang solid."
+    },
+    "reversed": {
+      "general": "Ketidakcocokan, konflik, atau hubungan yang retak.",
+      "love": "Perselisihan dengan pasangan atau berakhirnya sebuah koneksi.",
+      "career": "Kegagalan dalam kerjasama atau perbedaan visi dalam tim."
+    }
+  },
+  "three-of-cups": {
+    "name": "Three of Cups (Tiga Piala)",
+    "number": 3,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Perayaan", "Persahabatan", "Kegembiraan", "Kebersamaan"],
+    "upright": {
+      "general": "Waktu untuk merayakan keberhasilan bersama teman-teman tercinta.",
+      "love": "Hubungan yang ceria atau pertemuan sosial yang mempertemukan jodoh.",
+      "career": "Keberhasilan proyek tim dan dukungan rekan kerja yang baik."
+    },
+    "reversed": {
+      "general": "Gosip, isolasi, atau perayaan yang berlebihan.",
+      "love": "Gangguan pihak ketiga atau rasa terasing dalam lingkungan sosial.",
+      "career": "Kurangnya kerjasama tim atau kegagalan acara perusahaan."
+    }
+  },
+  "four-of-cups": {
+    "name": "Four of Cups (Empat Piala)",
+    "number": 4,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Apatis", "Kontemplasi", "Kebosanan", "Menolak Tawaran"],
+    "upright": {
+      "general": "Merasa tidak puas atau bosan dengan apa yang ada saat ini.",
+      "love": "Kejenuhan dalam asmara atau mengabaikan perasaan seseorang.",
+      "career": "Kurangnya motivasi kerja atau menolak peluang karena rasa malas."
+    },
+    "reversed": {
+      "general": "Kesadaran baru, menerima peluang, atau motivasi kembali.",
+      "love": "Mulai membuka hati lagi atau menemukan kegembiraan baru.",
+      "career": "Kembalinya antusiasme kerja dan melihat peluang yang terlewat."
+    }
+  },
+  "five-of-cups": {
+    "name": "Five of Cups (Lima Piala)",
+    "number": 5,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Kesedihan", "Penyesalan", "Kehilangan", "Fokus Negatif"],
+    "upright": {
+      "general": "Terlalu fokus pada apa yang hilang sehingga tidak melihat sisa harapan.",
+      "love": "Kesedihan karena putus cinta atau kekecewaan dalam hubungan.",
+      "career": "Kekecewaan atas hasil kerja namun masih ada peluang lain."
+    },
+    "reversed": {
+      "general": "Penerimaan, pemulihan, atau melihat sisi terang kembali.",
+      "love": "Mulai memaafkan masa lalu dan siap untuk hubungan baru.",
+      "career": "Bangkit dari kegagalan dan mencari strategi baru yang lebih baik."
+    }
+  },
+  "six-of-cups": {
+    "name": "Six of Cups (Enam Piala)",
+    "number": 6,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Nostalgia", "Masa Kecil", "Kemurahan Hati", "Kenangan"],
+    "upright": {
+      "general": "Mengingat masa lalu dengan indah atau kembalinya seseorang dari masa lalu.",
+      "love": "Kenangan manis bersama pasangan atau mantan yang kembali menyapa.",
+      "career": "Menggunakan ide-ide lama yang terbukti sukses atau bantuan dari kawan lama."
+    },
+    "reversed": {
+      "general": "Terjebak di masa lalu, tidak mau dewasa, atau kenangan buruk.",
+      "love": "Sulit move on atau membandingkan pasangan saat ini dengan masa lalu.",
+      "career": "Kurang inovasi karena terlalu terpaku pada metode lama."
+    }
+  },
+  "seven-of-cups": {
+    "name": "Seven of Cups (Tujuh Piala)",
+    "number": 7,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Ilusi", "Pilihan", "Imajinasi", "Kebingungan"],
+    "upright": {
+      "general": "Banyak pilihan yang menggoda namun perlu hati-hati terhadap ilusi.",
+      "love": "Terlalu banyak pilihan asmara atau ekspektasi yang tidak realistis.",
+      "career": "Peluang kerja yang beragam namun memerlukan seleksi yang teliti."
+    },
+    "reversed": {
+      "general": "Kejelasan, membuat keputusan, dan menghadapi realitas.",
+      "love": "Menentukan pilihan dalam cinta dan melihat pasangan apa adanya.",
+      "career": "Memilih fokus karir yang pasti dan berhenti berkhayal tanpa aksi."
+    }
+  },
+  "eight-of-cups": {
+    "name": "Eight of Cups (Delapan Piala)",
+    "number": 8,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Meninggalkan", "Pencarian", "Kekecewaan emosional", "Perjalanan"],
+    "upright": {
+      "general": "Meninggalkan situasi yang sudah tidak lagi memberikan kepuasan emosional.",
+      "love": "Pergi dari hubungan yang tidak membahagiakan untuk mencari makna lebih.",
+      "career": "Meninggalkan pekerjaan saat ini demi mencari tantangan yang lebih baik."
+    },
+    "reversed": {
+      "general": "Ketakutan untuk pergi, kembali ke situasi lama, atau stagnasi.",
+      "love": "Bertahan dalam hubungan yang hampa atau takut untuk sendiri.",
+      "career": "Enggan meninggalkan zona nyaman meskipun tidak puas bekerja."
+    }
+  },
+  "nine-of-cups": {
+    "name": "Nine of Cups (Sembilan Piala)",
+    "number": 9,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Kepuasan", "Keinginan Terkabul", "Kesenangan", "Kelimpahan"],
+    "upright": {
+      "general": "Kartu 'Harapan': keinginan Anda kemungkinan besar akan terwujud.",
+      "love": "Kebahagiaan emosional yang mendalam dan kepuasan dalam cinta.",
+      "career": "Mencapai kesuksesan yang diimpikan dan kepuasan profesional."
+    },
+    "reversed": {
+      "general": "Ketidakpuasan batin, kesombongan, atau keinginan yang tidak sehat.",
+      "love": "Kebahagiaan semu dalam asmara atau merasa hampa di balik kemewahan.",
+      "career": "Keberhasilan yang terasa kurang memuaskan atau ekspektasi berlebih."
+    }
+  },
+  "ten-of-cups": {
+    "name": "Ten of Cups (Sepuluh Piala)",
+    "number": 10,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Harmoni", "Kebahagiaan Keluarga", "Cinta Sejati", "Kepuasan"],
+    "upright": {
+      "general": "Kebahagiaan emosional yang sempurna dan harmoni dalam keluarga.",
+      "love": "Hubungan asmara yang ideal, pernikahan yang bahagia, dan cinta sejati.",
+      "career": "Lingkungan kerja yang penuh dukungan dan keberhasilan bersama tim."
+    },
+    "reversed": {
+      "general": "Ketidakharmonisan keluarga, nilai-nilai yang bertentangan, atau konflik.",
+      "love": "Ketegangan dalam rumah tangga atau merasa tidak sejalan dengan pasangan.",
+      "career": "Konflik di tempat kerja yang mengganggu ketenangan emosional."
+    }
+  },
+  "page-of-cups": {
+    "name": "Page of Cups (Pangeran Piala)",
+    "number": 11,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Intuisi", "Kreativitas", "Berita Emosional", "Kepolosan"],
+    "upright": {
+      "general": "Kabar baik terkait emosi atau munculnya ide kreatif yang baru.",
+      "love": "Pesan cinta yang manis atau awal dari kekaguman yang tulus.",
+      "career": "Inspirasi kreatif baru atau tawaran proyek yang menarik hati."
+    },
+    "reversed": {
+      "general": "Ketidakstabilan emosi, berita buruk, atau hambatan kreatif.",
+      "love": "Kekecewaan dalam asmara atau perasaan yang tidak tersampaikan.",
+      "career": "Kurangnya fokus pada detail kreatif atau kabar kerja yang mengecewakan."
+    }
+  },
+  "knight-of-cups": {
+    "name": "Knight of Cups (Kesatria Piala)",
+    "number": 12,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Romansa", "Pesona", "Imajinasi", "Tawaran"],
+    "upright": {
+      "general": "Seseorang yang romantis atau tawaran yang membawa kegembiraan.",
+      "love": "Lamaran asmara, kencan romantis, atau mengikuti kata hati.",
+      "career": "Peluang karir yang sejalan dengan minat dan bakat seni."
+    },
+    "reversed": {
+      "general": "Moody, tidak realistis, atau janji-janji palsu.",
+      "love": "Pasangan yang tidak konsisten atau godaan yang menyesatkan.",
+      "career": "Penawaran kerja yang tidak sesuai kenyataan atau kurangnya aksi."
+    }
+  },
+  "queen-of-cups": {
+    "name": "Queen of Cups (Ratu Piala)",
+    "number": 13,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Empati", "Intuisi", "Ketenangan", "Kasih Sayang"],
+    "upright": {
+      "general": "Seseorang yang penuh kasih, intuitif, dan menjadi pendengar yang baik.",
+      "love": "Kelembutan dalam hubungan dan dukungan emosional yang kuat.",
+      "career": "Kepemimpinan yang empatik dan suasana kerja yang penuh pengertian."
+    },
+    "reversed": {
+      "general": "Insekuritas emosi, manipulasi, atau terlalu sensitif.",
+      "love": "Kecemburuan yang tidak berdasar atau ketergantungan emosi.",
+      "career": "Gangguan emosional yang menghambat produktivitas kerja."
+    }
+  },
+  "king-of-cups": {
+    "name": "King of Cups (Raja Piala)",
+    "number": 14,
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "Air",
+    "keywords": ["Kematangan Emosi", "Keseimbangan", "Kedermawanan", "Kebijaksanaan"],
+    "upright": {
+      "general": "Seseorang yang mampu mengendalikan emosi dan memberikan saran bijak.",
+      "love": "Pasangan yang stabil secara emosional dan penuh perhatian.",
+      "career": "Kemampuan mengelola konflik dengan tenang dan kepemimpinan bijak."
+    },
+    "reversed": {
+      "general": "Manipulasi emosi, kemarahan yang dipendam, atau kecanduan.",
+      "love": "Hubungan yang penuh dengan drama emosional atau ketidaktulusan.",
+      "career": "Manajemen yang tidak adil atau ketidakstabilan suasana kantor."
+    }
+  },
+  "ace-of-swords": {
+    "name": "Ace of Swords (As Pedang)",
+    "number": 1,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Kejelasan", "Terobosan", "Kebenaran", "Kekuatan Mental"],
+    "upright": {
+      "general": "Momen kejelasan mental yang tajam dan awal dari ide yang kuat.",
+      "love": "Komunikasi yang jujur dan penyelesaian masalah asmara dengan logika.",
+      "career": "Terobosan intelektual atau keberhasilan dalam debat/negosiasi."
+    },
+    "reversed": {
+      "general": "Kebingungan, miskomunikasi, atau kekejaman kata-kata.",
+      "love": "Pertengkaran karena salah paham atau kata-kata yang menyakitkan.",
+      "career": "Kurangnya kejelasan dalam instruksi kerja atau kegagalan strategi."
+    }
+  },
+  "two-of-swords": {
+    "name": "Two of Swords (Dua Pedang)",
+    "number": 2,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Kebuntuan", "Pilihan Sulit", "Penghindaran", "Keseimbangan"],
+    "upright": {
+      "general": "Menghadapi keputusan sulit namun memilih untuk menutup mata.",
+      "love": "Keadaan stagnan dalam hubungan karena takut mengambil keputusan.",
+      "career": "Kebuntuan dalam negosiasi atau menunda keputusan penting."
+    },
+    "reversed": {
+      "general": "Kejelasan datang, membuat pilihan, dan menghadapi kenyataan.",
+      "love": "Akhirnya berani mengambil keputusan dalam hubungan asmara.",
+      "career": "Menemukan solusi dari masalah yang membingungkan selama ini."
+    }
+  },
+  "three-of-swords": {
+    "name": "Three of Swords (Tiga Pedang)",
+    "number": 3,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Patah Hati", "Kesedihan", "Penolakan", "Rasa Sakit"],
+    "upright": {
+      "general": "Masa kesedihan emosional yang mendalam atau rasa sakit hati.",
+      "love": "Perpisahan, pengkhianatan, atau rasa sakit dalam asmara.",
+      "career": "Kekecewaan besar di tempat kerja atau penghentian kerjasama."
+    },
+    "reversed": {
+      "general": "Pemulihan, pelepasan rasa sakit, dan mulai memaafkan.",
+      "love": "Mulai menyembuhkan luka lama dan siap untuk bangkit kembali.",
+      "career": "Mengatasi kegagalan karir dan mulai memperbaiki situasi."
+    }
+  },
+  "four-of-swords": {
+    "name": "Four of Swords (Empat Pedang)",
+    "number": 4,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Istirahat", "Pemulihan", "Meditasi", "Kontemplasi"],
+    "upright": {
+      "general": "Waktunya untuk beristirahat dan memulihkan energi mental Anda.",
+      "love": "Mengambil jeda dalam hubungan untuk refleksi diri.",
+      "career": "Cuti atau istirahat sejenak dari tekanan kerja yang berat."
+    },
+    "reversed": {
+      "general": "Kelelahan, kembali beraksi terlalu cepat, atau stres.",
+      "love": "Ketegangan yang belum tuntas karena tidak mau beristirahat.",
+      "career": "Stres kerja yang memuncak karena mengabaikan kesehatan mental."
+    }
+  },
+  "five-of-swords": {
+    "name": "Five of Swords (Lima Pedang)",
+    "number": 5,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Konflik", "Kemenangan Pahit", "Kekalahan", "Penghinaan"],
+    "upright": {
+      "general": "Memenangkan argumen namun kehilangan kepercayaan atau hubungan.",
+      "love": "Pertengkaran yang menyakitkan dan ego yang merusak keharmonisan.",
+      "career": "Persaingan tidak sehat di kantor yang merugikan semua pihak."
+    },
+    "reversed": {
+      "general": "Penyelesaian konflik, perdamaian, atau mengakui kekalahan.",
+      "love": "Mulai berdamai setelah pertengkaran hebat dan memperbaiki sikap.",
+      "career": "Meninggalkan lingkungan kerja toksik atau memperbaiki hubungan tim."
+    }
+  },
+  "six-of-swords": {
+    "name": "Six of Swords (Enam Pedang)",
+    "number": 6,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Transisi", "Perjalanan", "Meninggalkan Masalah", "Pemulihan"],
+    "upright": {
+      "general": "Pindah ke situasi yang lebih tenang meskipun masih ada beban emosi.",
+      "love": "Meninggalkan masa lalu yang sulit bersama pasangan ke arah yang lebih baik.",
+      "career": "Perubahan posisi atau pekerjaan yang membawa ketenangan baru."
+    },
+    "reversed": {
+      "general": "Stagnasi, sulit melepaskan, atau kembali ke masalah lama.",
+      "love": "Masalah asmara yang tidak kunjung selesai karena enggan berubah.",
+      "career": "Hambatan dalam transisi karir atau proyek yang tidak berjalan lancar."
+    }
+  },
+  "seven-of-swords": {
+    "name": "Seven of Swords (Tujuh Pedang)",
+    "number": 7,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Strategi", "Rahasia", "Kecurangan", "Kemandirian"],
+    "upright": {
+      "general": "Bertindak cerdik atau mungkin ada sesuatu yang disembunyikan.",
+      "love": "Ketidakjujuran dalam asmara atau kebutuhan untuk privasi lebih.",
+      "career": "Strategi bisnis yang licik atau perlu waspada terhadap rekan kerja."
+    },
+    "reversed": {
+      "general": "Pengakuan, kebenaran terungkap, atau strategi yang gagal.",
+      "love": "Terungkapnya rahasia asmara atau mulai berkata jujur.",
+      "career": "Kecurangan yang terbongkar atau mengubah taktik menjadi lebih etis."
+    }
+  },
+  "eight-of-swords": {
+    "name": "Eight of Swords (Delapan Pedang)",
+    "number": 8,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Terjebak", "Keterbatasan Diri", "Ketakutan", "Kebutaan"],
+    "upright": {
+      "general": "Merasa terjebak oleh pikiran sendiri padahal ada jalan keluar.",
+      "love": "Merasa terbelenggu dalam hubungan karena rasa takut yang tidak nyata.",
+      "career": "Merasa tidak memiliki pilihan dalam karir padahal pintu selalu terbuka."
+    },
+    "reversed": {
+      "general": "Kebebasan, perspektif baru, dan mengatasi ketakutan.",
+      "love": "Melepaskan diri dari ketakutan asmara dan melihat harapan baru.",
+      "career": "Menemukan jalan keluar dari masalah kerja dan mulai beraksi."
+    }
+  },
+  "nine-of-swords": {
+    "name": "Nine of Swords (Sembilan Pedang)",
+    "number": 9,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Kecemasan", "Insomnia", "Mimpi Buruk", "Penyesalan"],
+    "upright": {
+      "general": "Beban pikiran yang berlebihan hingga mengganggu waktu istirahat.",
+      "love": "Khawatir berlebihan tentang masa depan hubungan atau rasa bersalah.",
+      "career": "Stres berat akibat pekerjaan dan ketakutan akan kegagalan."
+    },
+    "reversed": {
+      "general": "Harapan mulai muncul, mengatasi kecemasan, atau mencari bantuan.",
+      "love": "Berdamai dengan ketakutan asmara dan mulai merasa tenang.",
+      "career": "Stres kerja yang mulai mereda dan menemukan cara untuk rileks."
+    }
+  },
+  "ten-of-swords": {
+    "name": "Ten of Swords (Sepuluh Pedang)",
+    "number": 10,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Akhir yang Menyakitkan", "Pengkhianatan", "Kekalahan Total"],
+    "upright": {
+      "general": "Mencapai titik terendah; situasi ini tidak bisa lebih buruk lagi.",
+      "love": "Perpisahan yang sangat menyakitkan atau pengkhianatan mendalam.",
+      "career": "Kegagalan total dalam bisnis atau diberhentikan secara sepihak."
+    },
+    "reversed": {
+      "general": "Kebangkitan, penyembuhan, dan mulai dari nol kembali.",
+      "love": "Mulai bangkit dari luka lama dan belajar dari pengalaman pahit.",
+      "career": "Pemulihan dari kegagalan karir dan mencari peluang baru."
+    }
+  },
+  "page-of-swords": {
+    "name": "Page of Swords (Pangeran Pedang)",
+    "number": 11,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Keingintahuan", "Kecerdasan", "Kewaspadaan", "Komunikasi"],
+    "upright": {
+      "general": "Seseorang yang tajam pikirannya dan haus akan informasi baru.",
+      "love": "Hubungan yang didasarkan pada stimulasi intelektual atau gosip.",
+      "career": "Ide-ide baru yang brilian namun perlu didukung oleh data valid."
+    },
+    "reversed": {
+      "general": "Kata-kata kasar, sarkasme, atau kurangnya kebijaksanaan.",
+      "love": "Kritik yang menyakitkan dalam asmara atau miskomunikasi.",
+      "career": "Taktik kerja yang gegabah atau mengabaikan detail penting."
+    }
+  },
+  "knight-of-swords": {
+    "name": "Knight of Swords (Kesatria Pedang)",
+    "number": 12,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Aksi Cepat", "Kecerdasan", "Keberanian", "Impulsif"],
+    "upright": {
+      "general": "Melaju dengan kecepatan tinggi untuk mencapai tujuan intelektual.",
+      "love": "Kejujuran yang mendadak atau aksi asmara yang sangat cepat.",
+      "career": "Mengambil keputusan bisnis dengan cepat dan penuh percaya diri."
+    },
+    "reversed": {
+      "general": "Kekasaran, terburu-buru yang merusak, atau kebodohan.",
+      "love": "Agresi dalam asmara atau perdebatan yang meledak-ledak.",
+      "career": "Kesalahan akibat terburu-buru atau kurangnya empati di kantor."
+    }
+  },
+  "queen-of-swords": {
+    "name": "Queen of Swords (Ratu Pedang)",
+    "number": 13,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Kemandirian", "Ketegasan", "Kejujuran", "Kebijaksanaan"],
+    "upright": {
+      "general": "Seseorang yang jujur, mandiri, dan mampu melihat kebenaran.",
+      "love": "Pentingnya kejujuran dan batasan yang jelas dalam hubungan.",
+      "career": "Kepemimpinan yang logis dan objektif dalam mengambil keputusan."
+    },
+    "reversed": {
+      "general": "Dingin, kejam, atau terlalu kritis terhadap orang lain.",
+      "love": "Sikap tidak peduli yang merusak kedekatan emosional asmara.",
+      "career": "Kritik kerja yang terlalu tajam tanpa memberikan solusi."
+    }
+  },
+  "king-of-swords": {
+    "name": "King of Swords (Raja Pedang)",
+    "number": 14,
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "Udara",
+    "keywords": ["Otoritas", "Logika", "Keadilan", "Intelektualitas"],
+    "upright": {
+      "general": "Pemimpin yang menggunakan logika dan fakta untuk memerintah.",
+      "love": "Hubungan yang didasarkan pada rasa hormat dan keselarasan pikiran.",
+      "career": "Keberhasilan dalam bidang hukum, sains, atau manajemen strategis."
+    },
+    "reversed": {
+      "general": "Tirani, manipulasi mental, atau penyalahgunaan kekuasaan.",
+      "love": "Sifat mendominasi secara intelektual yang menekan pasangan.",
+      "career": "Kebijakan kantor yang kaku atau penyebaran informasi yang salah."
+    }
+  },
+  "ace-of-pentacles": {
+    "name": "Ace of Pentacles (As Koin)",
+    "number": 1,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Kemakmuran", "Kesempatan Baru", "Kelimpahan Materi", "Manifestasi"],
+    "upright": {
+      "general": "Peluang baru untuk pertumbuhan finansial atau stabilitas materi.",
+      "love": "Hubungan yang stabil atau awal yang baru dalam membangun masa depan.",
+      "career": "Pekerjaan baru, kenaikan gaji, atau peluang bisnis yang menjanjikan."
+    },
+    "reversed": {
+      "general": "Kesempatan yang hilang, ketidakstabilan finansial, atau keserakahan.",
+      "love": "Rencana masa depan yang terhambat atau masalah uang dalam asmara.",
+      "career": "Investasi yang gagal atau kehilangan peluang kerja yang bagus."
+    }
+  },
+  "two-of-pentacles": {
+    "name": "Two of Pentacles (Dua Koin)",
+    "number": 2,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Keseimbangan", "Adaptasi", "Prioritas", "Multitasking"],
+    "upright": {
+      "general": "Menjaga keseimbangan antara berbagai tanggung jawab hidup.",
+      "love": "Menemukan waktu untuk pasangan di tengah kesibukan kerja.",
+      "career": "Mengelola beberapa proyek sekaligus dengan cukup baik."
+    },
+    "reversed": {
+      "general": "Ketidakseimbangan, kewalahan, atau kurangnya organisasi.",
+      "love": "Masalah dalam membagi waktu yang merugikan hubungan asmara.",
+      "career": "Gagal mengelola beban kerja atau masalah arus kas bisnis."
+    }
+  },
+  "three-of-pentacles": {
+    "name": "Three of Pentacles (Tiga Koin)",
+    "number": 3,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Kerjasama", "Keahlian", "Belajar", "Pencapaian"],
+    "upright": {
+      "general": "Bekerja dalam tim dengan sukses dan meningkatkan keahlian diri.",
+      "love": "Membangun hubungan melalui kerjasama dan nilai-nilai bersama.",
+      "career": "Keberhasilan dalam proyek tim dan pengakuan atas kompetensi."
+    },
+    "reversed": {
+      "general": "Kurangnya kerjasama, bakat yang tidak dihargai, atau malas.",
+      "love": "Ketidakmampuan untuk bekerja sama dalam hubungan asmara.",
+      "career": "Konflik dalam tim kerja atau kurangnya motivasi untuk belajar."
+    }
+  },
+  "four-of-pentacles": {
+    "name": "Four of Pentacles (Empat Koin)",
+    "number": 4,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Keamanan", "Kekikiran", "Kontrol", "Stabilitas"],
+    "upright": {
+      "general": "Memegang erat apa yang Anda miliki demi keamanan masa depan.",
+      "love": "Sifat posesif atau takut melepaskan zona nyaman dalam asmara.",
+      "career": "Fokus pada keamanan finansial dan menjaga posisi kerja saat ini."
+    },
+    "reversed": {
+      "general": "Melepaskan, boros, atau kehilangan kontrol finansial.",
+      "love": "Mengatasi sifat posesif dan mulai memberikan kebebasan.",
+      "career": "Investasi yang berisiko atau kehilangan stabilitas di kantor."
+    }
+  },
+  "five-of-pentacles": {
+    "name": "Five of Pentacles (Lima Koin)",
+    "number": 5,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Kesulitan Ekonomi", "Isolasi", "Kemiskinan", "Kekurangan"],
+    "upright": {
+      "general": "Menghadapi masa sulit secara materi atau merasa terasing.",
+      "love": "Hubungan yang diuji oleh masalah finansial atau merasa kesepian.",
+      "career": "Kesulitan dalam karir atau kerugian finansial yang signifikan."
+    },
+    "reversed": {
+      "general": "Pemulihan finansial, menemukan bantuan, atau harapan baru.",
+      "love": "Masa sulit asmara mulai berakhir dan menemukan dukungan.",
+      "career": "Mulai bangkit dari kebangkrutan atau mendapatkan pekerjaan baru."
+    }
+  },
+  "six-of-pentacles": {
+    "name": "Six of Pentacles (Enam Koin)",
+    "number": 6,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Kedermawanan", "Amal", "Keseimbangan Materi", "Bantuan"],
+    "upright": {
+      "general": "Memberi atau menerima bantuan sesuai dengan kebutuhan.",
+      "love": "Hubungan yang saling mendukung baik secara materi maupun emosi.",
+      "career": "Mendapatkan bonus, bantuan mentor, atau berbagi keberhasilan."
+    },
+    "reversed": {
+      "general": "Keserakahan, hutang, atau bantuan yang memiliki pamrih.",
+      "love": "Ketidakseimbangan dalam memberi dan menerima dalam asmara.",
+      "career": "Ketidakadilan dalam pembagian gaji atau penyalahgunaan dana."
+    }
+  },
+  "seven-of-pentacles": {
+    "name": "Seven of Pentacles (Tujuh Koin)",
+    "number": 7,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Kesabaran", "Investasi", "Evaluasi", "Hasil Jangka Panjang"],
+    "upright": {
+      "general": "Menunggu hasil dari kerja keras dan mengevaluasi kemajuan.",
+      "love": "Sabar dalam membangun hubungan dan melihat perkembangannya.",
+      "career": "Investasi jangka panjang yang mulai menunjukkan tanda keberhasilan."
+    },
+    "reversed": {
+      "general": "Kurangnya visi, frustasi karena hasil lambat, atau malas.",
+      "love": "Ketidaksabaran dalam hubungan yang merusak proses alami.",
+      "career": "Keputusan investasi yang salah atau kurangnya ketekunan kerja."
+    }
+  },
+  "eight-of-pentacles": {
+    "name": "Eight of Pentacles (Delapan Koin)",
+    "number": 8,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Ketekunan", "Kerajinan", "Keahlian", "Detail"],
+    "upright": {
+      "general": "Fokus pada peningkatan keterampilan dan kerja keras yang konsisten.",
+      "love": "Bekerja keras untuk memperbaiki dan memperkuat hubungan asmara.",
+      "career": "Peningkatan kompetensi profesional dan dedikasi pada pekerjaan."
+    },
+    "reversed": {
+      "general": "Kurang fokus, perfeksionisme yang menghambat, atau bosan.",
+      "love": "Kurangnya upaya untuk menjaga kualitas hubungan asmara.",
+      "career": "Hasil kerja yang ceroboh atau kehilangan minat pada bidang karir."
+    }
+  },
+  "nine-of-pentacles": {
+    "name": "Nine of Pentacles (Sembilan Koin)",
+    "number": 9,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Kemandirian Finansial", "Kemewahan", "Kepuasan Diri", "Hasil"],
+    "upright": {
+      "general": "Menikmati buah dari kerja keras dan merasa aman secara materi.",
+      "love": "Kemandirian dalam asmara atau merasa bahagia dengan diri sendiri.",
+      "career": "Keberhasilan finansial yang memungkinkan gaya hidup mewah."
+    },
+    "reversed": {
+      "general": "Terlalu bergantung pada materi, kerugian, atau rasa hampa.",
+      "love": "Hubungan yang hanya berdasarkan materi atau merasa kurang aman.",
+      "career": "Kegagalan dalam mempertahankan kesuksesan finansial saat ini."
+    }
+  },
+  "ten-of-pentacles": {
+    "name": "Ten of Pentacles (Sepuluh Koin)",
+    "number": 10,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Warisan", "Kekayaan Keluarga", "Stabilitas Jangka Panjang"],
+    "upright": {
+      "general": "Kemakmuran yang langgeng, keamanan keluarga, dan tradisi.",
+      "love": "Hubungan yang sangat stabil dengan dukungan keluarga yang kuat.",
+      "career": "Keberhasilan bisnis keluarga atau pensiun yang aman."
+    },
+    "reversed": {
+      "general": "Masalah warisan, ketidakstabilan keluarga, atau kerugian besar.",
+      "love": "Konflik keluarga terkait uang yang merusak hubungan asmara.",
+      "career": "Kegagalan dalam rencana keuangan jangka panjang atau kebangkrutan."
+    }
+  },
+  "page-of-pentacles": {
+    "name": "Page of Pentacles (Pangeran Koin)",
+    "number": 11,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Peluang Belajar", "Manifestasi", "Ambisi", "Kabar Baik"],
+    "upright": {
+      "general": "Awal dari usaha baru atau keinginan untuk belajar hal praktis.",
+      "love": "Awal hubungan yang stabil atau rencana masa depan yang nyata.",
+      "career": "Tawaran pelatihan baru atau peluang untuk memulai bisnis kecil."
+    },
+    "reversed": {
+      "general": "Kurang fokus, penundaan, atau rencana yang tidak realistis.",
+      "love": "Kurangnya komitmen nyata atau rencana asmara yang gagal.",
+      "career": "Kurangnya dedikasi pada studi atau kegagalan dalam memulai proyek."
+    }
+  },
+  "knight-of-pentacles": {
+    "name": "Knight of Pentacles (Kesatria Koin)",
+    "number": 12,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Ketekunan", "Tanggung Jawab", "Metodis", "Kesabaran"],
+    "upright": {
+      "general": "Melangkah maju dengan hati-hati namun pasti menuju kesuksesan.",
+      "love": "Pasangan yang setia, dapat diandalkan, dan fokus pada masa depan.",
+      "career": "Keberhasilan melalui kerja keras yang konsisten dan disiplin tinggi."
+    },
+    "reversed": {
+      "general": "Stagnasi, sifat keras kepala, atau terlalu kaku pada rutinitas.",
+      "love": "Kebosanan dalam hubungan karena kurangnya variasi atau aksi.",
+      "career": "Kurangnya ambisi kerja atau terjebak dalam rutinitas yang membosankan."
+    }
+  },
+  "queen-of-pentacles": {
+    "name": "Queen of Pentacles (Ratu Koin)",
+    "number": 13,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Pengasuhan", "Keamanan Materi", "Kedermawanan", "Praktis"],
+    "upright": {
+      "general": "Seseorang yang pandai mengelola sumber daya dan menciptakan kenyamanan.",
+      "love": "Kehangatan dalam hubungan dan kepedulian terhadap kesejahteraan pasangan.",
+      "career": "Manajemen keuangan yang cerdas dan lingkungan kerja yang stabil."
+    },
+    "reversed": {
+      "general": "Ketidakstabilan finansial, sifat posesif, atau kurangnya perawatan.",
+      "love": "Kecemasan akan keamanan materi dalam asmara atau pengabaian diri.",
+      "career": "Kesalahan dalam mengelola dana bisnis atau kurangnya visi praktis."
+    }
+  },
+  "king-of-pentacles": {
+    "name": "King of Pentacles (Raja Koin)",
+    "number": 14,
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "Tanah",
+    "keywords": ["Kemakmuran", "Kepemimpinan", "Stabilitas", "Keberhasilan Materi"],
+    "upright": {
+      "general": "Pemimpin yang sukses secara finansial dan memiliki kendali penuh.",
+      "love": "Pasangan yang mapan dan mampu memberikan keamanan hidup.",
+      "career": "Puncak kesuksesan karir dan kemapanan dalam berwirausaha."
+    },
+    "reversed": {
+      "general": "Keserakahan, korupsi, atau kegagalan finansial besar.",
+      "love": "Materialisme yang merusak nilai-nilai asmara yang tulus.",
+      "career": "Taktik bisnis yang tidak etis atau keruntuhan kerajaan bisnis."
+    }
+  }
+}

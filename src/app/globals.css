@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --background: #101737;
+  --on-background: #eef2ff;
+  
+  --primary: #c18eff;
+  --on-primary: #0f0e28;
+  --primary-container: #b18bff;
+  --on-primary-container: #f8f4ff;
+  
+  --secondary: #76e0ff;
+  --on-secondary: #072d40;
+  --secondary-container: #5cc9ff;
+  --on-secondary-container: #e5f8ff;
+  
+  --tertiary: #f5a0ff;
+  --on-tertiary: #331538;
+  --tertiary-container: #f8b4ff;
+  --on-tertiary-container: #fff0ff;
+  
+  --surface: #15204f;
+  --surface-dim: #0c1331;
+  --surface-bright: #243b7a;
+  --surface-container-lowest: #0b1431;
+  --surface-container-low: #13214b;
+  --surface-container: #1b2b61;
+  --surface-container-high: #2b3f89;
+  --surface-container-highest: #3c56ab;
+  --surface-variant: #14234a;
+  
+  --outline: #8b5cf6;
+  --outline-variant: #3d4d90;
+  --surface-tint: #8870ff;
+  
+  /* Typography */
+  --font-display-lg: "Playfair Display", serif;
+  --font-headline-lg: "Playfair Display", serif;
+  --font-headline-md: "Playfair Display", serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-label-md: "Inter", sans-serif;
+  --font-label-sm: "Inter", sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-image: radial-gradient(circle at top left, rgba(193, 142, 255, 0.22), transparent 24%),
+                    radial-gradient(circle at bottom right, rgba(118, 224, 255, 0.20), transparent 30%),
+                    linear-gradient(180deg, rgba(12, 10, 31, 0.96), rgba(16, 23, 55, 0.98));
+  background-color: var(--background);
+  color: var(--on-background);
+  font-family: var(--font-body-md);
+  overflow-x: hidden;
+}
+
+.cosmic-bg {
+  background: radial-gradient(circle at top left, rgba(167, 120, 255, 0.18), transparent 26%),
+              radial-gradient(circle at bottom right, rgba(118, 224, 255, 0.14), transparent 32%),
+              var(--background);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(34, 26, 65, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(193, 142, 255, 0.2);
+}
+
+.glass-panel-interactive {
+  background: rgba(30, 24, 58, 0.78);
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+  border: 1px solid rgba(193, 142, 255, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.glass-panel-interactive:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 80px rgba(56, 189, 248, 0.12);
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.text-glow {
+  text-shadow: 0 0 24px rgba(139, 89, 255, 0.45);
 }
