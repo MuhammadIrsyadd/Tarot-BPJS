@@ -2,17 +2,16 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, Filter, ArrowLeft } from "lucide-react";
+import { Search, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { getAllCards } from "@/lib/utils";
-import { TarotCardData } from "@/lib/types";
 
 export default function EncyclopediaPage() {
   const allCards = getAllCards();
   const [searchTerm, setSearchTerm] = useState("");
   const [filterArcana, setFilterArcana] = useState<string>("all");
 
-  const filteredCards = Object.entries(allCards).filter(([slug, card]) => {
+  const filteredCards = Object.entries(allCards).filter(([ , card]) => {
     const matchesSearch = card.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           card.keywords.some(kw => kw.toLowerCase().includes(searchTerm.toLowerCase()));
     const matchesArcana = filterArcana === "all" || card.arcana === filterArcana;

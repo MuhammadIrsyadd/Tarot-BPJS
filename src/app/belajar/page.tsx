@@ -32,7 +32,7 @@ export default function LearnPage() {
           <ScrollText className="w-10 h-10" />
           Belajar Tarot
         </h1>
-        <p className="text-mystic-fg/60 mb-12 italic text-lg">"Kebijaksanaan kuno di ujung jarimu."</p>
+        <p className="text-mystic-fg/60 mb-12 italic text-lg">&quot;Kebijaksanaan kuno di ujung jarimu.&quot;</p>
 
         <div className="space-y-12">
           {sections.map((section, i) => (

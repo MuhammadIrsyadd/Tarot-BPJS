@@ -34,7 +34,7 @@ export default function SettingsPage() {
               <span>Tema Deck</span>
               <span className="text-mystic-gold font-bold">Klasik (Default)</span>
             </div>
-            <p className="text-xs text-mystic-fg/40 mt-4 italic">Tema 'Cosmic' dan 'Retro' akan hadir di versi selanjutnya.</p>
+            <p className="text-xs text-mystic-fg/40 mt-4 italic">Tema &apos;Cosmic&apos; dan &apos;Retro&apos; akan hadir di versi selanjutnya.</p>
           </div>
 
           <div className="glass p-6 rounded-2xl border-mystic-gold/10">

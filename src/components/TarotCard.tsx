@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { TarotCardData } from "@/lib/types";
@@ -91,14 +92,15 @@ export default function TarotCard({ card, slug, isReversed, isRevealed = false, 
           {card ? (
             <div className={`w-full h-full flex flex-col overflow-hidden ${isReversed ? 'rotate-180' : ''}`}>
               <div className="relative w-full h-4/5 rounded-3xl overflow-hidden border border-secondary/15 shadow-inner shadow-secondary/5 bg-surface-bright">
-                {imageUrl ? (
-                  <img 
-                    src={imageUrl}
-                    alt={card.name}
-                    className="w-full h-full object-cover transition-opacity duration-500"
-                    onError={() => setImageError(true)}
-                  />
-                ) : (
+              {imageUrl ? (
+              <Image 
+                src={imageUrl}
+                alt={card.name}
+                fill
+                className="object-cover transition-opacity duration-500"
+                onError={() => setImageError(true)}
+              />
+              ) : (
                   <div className="w-full h-full flex flex-col items-center justify-center p-5 text-center bg-gradient-to-br from-surface/70 to-surface-container">
                     <div className={`text-5xl mb-4 ${getSuitColor()} opacity-70 font-serif`}>
                       {card.arcana === 'major' ? '✧' : (card.suit === 'cups' ? '❣' : card.suit === 'swords' ? '⚔' : card.suit === 'wands' ? '🪄' : '🪙')}

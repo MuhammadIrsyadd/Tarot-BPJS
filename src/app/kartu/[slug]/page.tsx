@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Sparkles, Moon, Sun } from "lucide-react";
+import { ArrowLeft, Moon, Sun } from "lucide-react";
 import { getCardBySlug } from "@/lib/utils";
 import TarotCard from "@/components/TarotCard";
 import InterpretationPanel from "@/components/InterpretationPanel";

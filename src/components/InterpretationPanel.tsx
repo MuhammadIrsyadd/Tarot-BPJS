@@ -11,7 +11,7 @@ interface InterpretationPanelProps {
   context?: 'general' | 'love' | 'career';
 }
 
-export default function InterpretationPanel({ card, isReversed, positionName, context = 'general' }: InterpretationPanelProps) {
+export default function InterpretationPanel({ card, isReversed, positionName }: InterpretationPanelProps) {
   const interpretation = isReversed ? card.reversed : card.upright;
   
   return (
@@ -71,7 +71,7 @@ export default function InterpretationPanel({ card, isReversed, positionName, co
           <Sparkles className="w-3 h-3" /> Nasehat Kartu
         </p>
         <p className="text-center mt-2 font-serif text-mystic-gold/90 italic">
-          "{isReversed ? "Tinjau kembali langkahmu, ada hambatan yang perlu disadari." : "Percaya pada intuisi dan langkah yang sedang kamu ambil."}"
+          &quot;{isReversed ? "Tinjau kembali langkahmu, ada hambatan yang perlu disadari." : "Percaya pada intuisi dan langkah yang sedang kamu ambil."}&quot;
         </p>
       </div>
     </motion.div>

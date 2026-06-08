@@ -1,4 +1,4 @@
-import { TarotCardData } from "./types";
+// import { TarotCardData } from "./types";
 
 export interface JournalEntry {
   id: string;

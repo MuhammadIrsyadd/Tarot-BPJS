@@ -9,11 +9,11 @@ import { getCardBySlug } from "@/lib/utils";
 import TarotCard from "@/components/TarotCard";
 
 export default function JournalPage() {
-  const [entries, setEntries] = useState<JournalEntry[]>([]);
+  const [entries, setEntries] = useState<JournalEntry[]>(() => getJournal());
   const [selectedEntry, setSelectedEntry] = useState<JournalEntry | null>(null);
 
   useEffect(() => {
-    setEntries(getJournal());
+    // getJournal is now handled in initializer
   }, []);
 
   const handleDelete = (id: string, e: React.MouseEvent) => {
