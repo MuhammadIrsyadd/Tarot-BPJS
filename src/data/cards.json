@@ -1,20 +1,33 @@
 {
   "the-fool": {
     "name": "Sang Pengelana (The Fool)",
+    "name_en": "The Fool",
     "number": 0,
     "arcana": "major",
     "suit": null,
     "element": "Udara",
+    "element_en": "Air",
     "keywords": ["Permulaan baru", "Kepolosan", "Petualangan", "Kebebasan"],
+    "keywords_en": ["New beginnings", "Innocence", "Adventure", "Freedom"],
     "upright": {
       "general": "Awal dari perjalanan baru yang penuh potensi dan optimisme.",
       "love": "Hubungan baru yang spontan atau fase baru yang menyegarkan.",
       "career": "Peluang kerja baru atau ide kreatif yang berani diambil."
     },
+    "upright_en": {
+      "general": "Beginning of a new journey full of potential and optimism.",
+      "love": "A spontaneous new relationship or a refreshing new phase.",
+      "career": "New job opportunities or bold creative ideas."
+    },
     "reversed": {
       "general": "Kecerobohan, ketakutan akan risiko, atau penundaan yang tidak perlu.",
       "love": "Komitmen yang belum matang atau risiko emosional yang terlalu besar.",
       "career": "Keputusan karir yang terburu-buru tanpa perencanaan yang matang."
+    },
+    "reversed_en": {
+      "general": "Recklessness, fear of risk, or unnecessary delays.",
+      "love": "Immature commitment or emotional risks that are too high.",
+      "career": "Hasty career decisions without proper planning."
     }
   },
   "the-magician": {

@@ -52,6 +52,26 @@ export function updateNotes(id: string, notes: string) {
   localStorage.setItem(STORAGE_KEYS.JOURNAL, JSON.stringify(journal));
 }
 
+export function getTheme(): string {
+  if (typeof window === 'undefined') return 'cosmic';
+  return localStorage.getItem(STORAGE_KEYS.THEME) || 'cosmic';
+}
+
+export function setTheme(theme: string) {
+  if (typeof window === 'undefined') return;
+  localStorage.setItem(STORAGE_KEYS.THEME, theme);
+}
+
+export function getLang(): 'id' | 'en' {
+  if (typeof window === 'undefined') return 'id';
+  return (localStorage.getItem(STORAGE_KEYS.LANG) as 'id' | 'en') || 'id';
+}
+
+export function setLang(lang: 'id' | 'en') {
+  if (typeof window === 'undefined') return;
+  localStorage.setItem(STORAGE_KEYS.LANG, lang);
+}
+
 export function clearAllData() {
   if (typeof window === 'undefined') return;
   localStorage.removeItem(STORAGE_KEYS.JOURNAL);

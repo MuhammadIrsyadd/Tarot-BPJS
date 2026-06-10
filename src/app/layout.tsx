@@ -40,6 +40,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { SettingsProvider } from "@/context/SettingsContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,8 +50,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
-        <Header />
-        {children}
+        <SettingsProvider>
+          <Header />
+          {children}
+        </SettingsProvider>
       </body>
     </html>
   );

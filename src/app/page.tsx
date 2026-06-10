@@ -5,8 +5,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { CalendarDays, Sparkles, BookOpen, ScrollText, Library, Moon, Sun, Stars } from "lucide-react";
+import { useSettings } from "@/context/SettingsContext";
+import { UI_STRINGS } from "@/lib/translations";
 
 export default function Home() {
+  const { lang } = useSettings();
+  const t = UI_STRINGS[lang].home;
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -28,18 +32,18 @@ export default function Home() {
 
   // Array of zodiac signs with their SVG path data and image URLs
   const zodiacSigns = [
-    { name: "Aries", symbol: "♈", path: "M 20 60 L 40 30 L 70 35 L 85 60", description: "The Ram", stars: [[20,60], [40,30], [70,35], [85,60]], imageUrl: "/images/zodiac/aries.png" },
-    { name: "Taurus", symbol: "♉", path: "M 80 20 L 60 45 L 40 50 L 20 30 M 40 50 L 35 80 L 60 85", description: "The Bull", stars: [[80,20], [60,45], [40,50], [20,30], [35,80], [60,85]], imageUrl: "/images/zodiac/taurus.png" },
-    { name: "Gemini", symbol: "♊", path: "M 30 20 L 30 80 M 70 20 L 70 80 M 30 30 L 70 30 M 30 70 L 70 70", description: "The Twins", stars: [[30,20], [30,80], [70,20], [70,80], [30,30], [70,30], [30,70], [70,70]], imageUrl: "/images/zodiac/gemini.png" },
-    { name: "Cancer", symbol: "♋", path: "M 50 20 L 50 50 L 20 80 M 50 50 L 80 80", description: "The Crab", stars: [[50,20], [50,50], [20,80], [80,80]], imageUrl: "/images/zodiac/cancer.png" },
-    { name: "Leo", symbol: "♌", path: "M 85 85 L 30 85 L 20 60 L 30 30 L 60 25 L 80 45 L 60 65", description: "The Lion", stars: [[85,85], [30,85], [20,60], [30,30], [60,25], [80,45], [60,65]], imageUrl: "/images/zodiac/leo.png" },
-    { name: "Virgo", symbol: "♍", path: "M 20 20 L 40 50 L 20 80 M 40 50 L 70 50 L 85 20 L 85 80", description: "The Maiden", stars: [[20,20], [40,50], [20,80], [40,50], [70,50], [85,20], [85,80]], imageUrl: "/images/zodiac/virgo.png" },
-    { name: "Libra", symbol: "♎", path: "M 20 50 L 50 20 L 80 50 L 50 80 Z", description: "The Scales", stars: [[20,50], [50,20], [80,50], [50,80]], imageUrl: "/images/zodiac/libra.png" },
-    { name: "Scorpio", symbol: "♏", path: "M 20 30 L 45 30 L 45 60 L 65 80 L 85 65 L 75 40", description: "The Scorpion", stars: [[20,30], [45,30], [45,60], [65,80], [85,65], [75,40]], imageUrl: "/images/zodiac/scorpio.png" },
-    { name: "Sagittarius", symbol: "♐", path: "M 20 80 L 80 20 M 50 20 L 80 20 L 80 50 M 40 60 L 60 40", description: "The Archer", stars: [[20,80], [80,20], [50,20], [80,50], [40,60], [60,40]], imageUrl: "/images/zodiac/sagittarius.png" },
-    { name: "Capricorn", symbol: "♑", path: "M 20 40 L 50 20 L 85 45 L 70 85 L 35 80 Z", description: "The Sea-Goat", stars: [[20,40], [50,20], [85,45], [70,85], [35,80]], imageUrl: "/images/zodiac/capricorn.png" },
-    { name: "Aquarius", symbol: "♒", path: "M 20 30 L 40 45 L 60 30 L 85 45 M 20 55 L 40 70 L 60 55 L 85 70", description: "The Water Bearer", stars: [[20,30], [40,45], [60,30], [85,45], [20,55], [40,70], [60,55], [85,70]], imageUrl: "/images/zodiac/aquarius.png" },
-    { name: "Pisces", symbol: "♓", path: "M 20 20 L 50 50 L 80 20 M 50 50 L 50 90 M 35 80 L 65 80", description: "The Fish", stars: [[20,20], [50,50], [80,20], [50,90], [35,80], [65,80]], imageUrl: "/images/zodiac/pisces.png" },
+    { name: "Aries", symbol: "♈", path: "M 20 60 L 40 30 L 70 35 L 85 60", description: lang === 'id' ? "Sang Ram" : "The Ram", stars: [[20,60], [40,30], [70,35], [85,60]], imageUrl: "/images/zodiac/aries.png" },
+    { name: "Taurus", symbol: "♉", path: "M 80 20 L 60 45 L 40 50 L 20 30 M 40 50 L 35 80 L 60 85", description: lang === 'id' ? "Sang Banteng" : "The Bull", stars: [[80,20], [60,45], [40,50], [20,30], [35,80], [60,85]], imageUrl: "/images/zodiac/taurus.png" },
+    { name: "Gemini", symbol: "♊", path: "M 30 20 L 30 80 M 70 20 L 70 80 M 30 30 L 70 30 M 30 70 L 70 70", description: lang === 'id' ? "Sang Kembar" : "The Twins", stars: [[30,20], [30,80], [70,20], [70,80], [30,30], [70,30], [30,70], [70,70]], imageUrl: "/images/zodiac/gemini.png" },
+    { name: "Cancer", symbol: "♋", path: "M 50 20 L 50 50 L 20 80 M 50 50 L 80 80", description: lang === 'id' ? "Sang Kepiting" : "The Crab", stars: [[50,20], [50,50], [20,80], [80,80]], imageUrl: "/images/zodiac/cancer.png" },
+    { name: "Leo", symbol: "♌", path: "M 85 85 L 30 85 L 20 60 L 30 30 L 60 25 L 80 45 L 60 65", description: lang === 'id' ? "Sang Singa" : "The Lion", stars: [[85,85], [30,85], [20,60], [30,30], [60,25], [80,45], [60,65]], imageUrl: "/images/zodiac/leo.png" },
+    { name: "Virgo", symbol: "♍", path: "M 20 20 L 40 50 L 20 80 M 40 50 L 70 50 L 85 20 L 85 80", description: lang === 'id' ? "Sang Perawan" : "The Maiden", stars: [[20,20], [40,50], [20,80], [40,50], [70,50], [85,20], [85,80]], imageUrl: "/images/zodiac/virgo.png" },
+    { name: "Libra", symbol: "♎", path: "M 20 50 L 50 20 L 80 50 L 50 80 Z", description: lang === 'id' ? "Sang Timbangan" : "The Scales", stars: [[20,50], [50,20], [80,50], [50,80]], imageUrl: "/images/zodiac/libra.png" },
+    { name: "Scorpio", symbol: "♏", path: "M 20 30 L 45 30 L 45 60 L 65 80 L 85 65 L 75 40", description: lang === 'id' ? "Sang Kalajengking" : "The Scorpion", stars: [[20,30], [45,30], [45,60], [65,80], [85,65], [75,40]], imageUrl: "/images/zodiac/scorpio.png" },
+    { name: "Sagittarius", symbol: "♐", path: "M 20 80 L 80 20 M 50 20 L 80 20 L 80 50 M 40 60 L 60 40", description: lang === 'id' ? "Sang Pemanah" : "The Archer", stars: [[20,80], [80,20], [50,20], [80,50], [40,60], [60,40]], imageUrl: "/images/zodiac/sagittarius.png" },
+    { name: "Capricorn", symbol: "♑", path: "M 20 40 L 50 20 L 85 45 L 70 85 L 35 80 Z", description: lang === 'id' ? "Sang Kambing Laut" : "The Sea-Goat", stars: [[20,40], [50,20], [85,45], [70,85], [35,80]], imageUrl: "/images/zodiac/capricorn.png" },
+    { name: "Aquarius", symbol: "♒", path: "M 20 30 L 40 45 L 60 30 L 85 45 M 20 55 L 40 70 L 60 55 L 85 70", description: lang === 'id' ? "Sang Pembawa Air" : "The Water Bearer", stars: [[20,30], [40,45], [60,30], [85,45], [20,55], [40,70], [60,55], [85,70]], imageUrl: "/images/zodiac/aquarius.png" },
+    { name: "Pisces", symbol: "♓", path: "M 20 20 L 50 50 L 80 20 M 50 50 L 50 90 M 35 80 L 65 80", description: lang === 'id' ? "Sang Ikan" : "The Fish", stars: [[20,20], [50,50], [80,20], [50,90], [35,80], [65,80]], imageUrl: "/images/zodiac/pisces.png" },
   ];
 
   useEffect(() => {
@@ -84,16 +88,16 @@ export default function Home() {
             </span>
 
             <h1 className="max-w-3xl font-display-lg text-[3.5rem] leading-[1.1] text-primary drop-shadow-[0_0_20px_rgba(156,119,255,0.3)] sm:text-[4.5rem]">
-              Unveil Your <br/> Destiny
+              {t.tagline.split(' ').map((word, i) => i === 1 ? <span key={i}><br/>{word} </span> : word + ' ')}
             </h1>
 
             <p className="max-w-md text-on-surface-variant text-base leading-relaxed">
-              Connect with ancient wisdom through a modern lens. Discover what the stars and cards hold for your journey today.
+              {t.desc}
             </p>
 
             <div className="mt-4 space-y-3">
               <div className="text-[10px] uppercase tracking-[0.35em] text-on-surface-variant opacity-60">
-                Mulai Perjalananmu
+                {lang === 'id' ? 'Mulai Perjalananmu' : 'Start Your Journey'}
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
@@ -101,14 +105,14 @@ export default function Home() {
                   className="inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-secondary to-primary px-8 py-3.5 text-sm font-semibold text-on-primary shadow-[0_15px_40px_-20px_rgba(118,224,255,0.7)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-15px_rgba(118,224,255,0.8)]"
                 >
                   <Sparkles className="w-5 h-5" />
-                  Start Reading
+                  {t.start_reading}
                 </Link>
                 <Link
                   href="/daily-reading"
                   className="inline-flex items-center justify-center gap-3 rounded-2xl border border-primary/25 bg-white/10 px-8 py-3.5 text-sm font-semibold text-on-background shadow-[0_15px_40px_-25px_rgba(193,142,255,0.6)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/15"
                 >
                   <CalendarDays className="w-5 h-5" />
-                  Daily Reading
+                  {t.daily_reading}
                 </Link>
               </div>
             </div>
@@ -230,7 +234,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="font-display-lg text-4xl text-primary md:text-5xl"
             >
-              The Mystic Path
+              {t.mystic_path}
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -239,15 +243,15 @@ export default function Home() {
               transition={{ delay: 0.1 }}
               className="mx-auto mt-4 max-w-2xl text-on-surface-variant"
             >
-              Jelajahi setiap fitur yang dirancang untuk memperdalam pemahamanmu tentang simbolisme dan intuisi.
+              {t.mystic_desc}
             </motion.p>
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
-              { icon: BookOpen, title: "Belajar Tarot", desc: "Mulai dari dasar hingga teknik lanjutan untuk membaca kartu.", link: "/belajar" },
-              { icon: ScrollText, title: "Jurnal Pribadi", desc: "Simpan setiap pembacaanmu dan amati perkembangan intuisimu.", link: "/jurnal" },
-              { icon: Library, title: "Ensiklopedia", desc: "Perpustakaan makna kartu lengkap dengan nuansa visual modern.", link: "/kartu" }
+              { icon: BookOpen, title: t.learn_title, desc: t.learn_desc, link: "/belajar" },
+              { icon: ScrollText, title: t.journal_title, desc: t.journal_desc, link: "/jurnal" },
+              { icon: Library, title: t.encyclopedia_title, desc: t.encyclopedia_desc, link: "/kartu" }
             ].map((feature, i) => (
               <motion.div
                 key={feature.title}
@@ -264,8 +268,8 @@ export default function Home() {
                 <p className="mb-6 text-sm leading-relaxed text-on-surface-variant">
                   {feature.desc}
                 </p>
-                <Link href="/daily-reading" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-secondary transition-colors">
-                  Jelajahi <Sparkles className="h-3 w-3" />
+                <Link href={feature.link} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-secondary transition-colors">
+                  {lang === 'id' ? 'Jelajahi' : 'Explore'} <Sparkles className="h-3 w-3" />
                 </Link>
               </motion.div>
             ))}
@@ -370,14 +374,14 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               className="text-[10px] uppercase tracking-[0.6em] text-secondary"
             >
-              Cosmic Connection
+              {lang === 'id' ? 'Koneksi Kosmik' : 'Cosmic Connection'}
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="mt-4 font-display-lg text-5xl text-white md:text-7xl"
             >
-              Celestial Alignment
+              {lang === 'id' ? 'Penyelarasan Surgawi' : 'Celestial Alignment'}
             </motion.h2>
           </div>
 
@@ -395,10 +399,10 @@ export default function Home() {
 
             {/* Orbiting Planets & Paths */}
             {[
-              { size: 'h-6 w-6', color: 'from-secondary to-blue-300', orbit: 280, duration: 12, label: 'Mercury', dots: 8 },
+              { size: 'h-6 w-6', color: 'from-secondary to-blue-300', orbit: 280, duration: 12, label: lang === 'id' ? 'Merkurius' : 'Mercury', dots: 8 },
               { size: 'h-10 w-10', color: 'from-orange-400 to-yellow-200', orbit: 400, duration: 25, label: 'Venus', dots: 12 },
-              { size: 'h-12 w-12', color: 'from-blue-500 to-emerald-300', orbit: 540, duration: 40, label: 'Earth', dots: 16 },
-              { size: 'h-9 w-9', color: 'from-red-500 to-orange-600', orbit: 680, duration: 60, label: 'Mars', dots: 20 },
+              { size: 'h-12 w-12', color: 'from-blue-500 to-emerald-300', orbit: 540, duration: 40, label: lang === 'id' ? 'Bumi' : 'Earth', dots: 16 },
+              { size: 'h-9 w-9', color: 'from-red-500 to-orange-600', orbit: 680, duration: 60, label: lang === 'id' ? 'Mars' : 'Mars', dots: 20 },
             ].map((planet) => (
               <div 
                 key={planet.label}
@@ -460,10 +464,10 @@ export default function Home() {
               viewport={{ once: true }}
               className="font-display-lg text-4xl text-white md:text-6xl"
             >
-              Mystic Constellations
+              {lang === 'id' ? 'Konstelasi Mistis' : 'Mystic Constellations'}
             </motion.h2>
             <p className="mt-4 text-on-surface-variant max-w-xl mx-auto uppercase tracking-[0.3em] text-[10px]">
-              Garis bintang yang membentuk takdirmu dalam zodiak.
+              {lang === 'id' ? 'Garis bintang yang membentuk takdirmu dalam zodiak.' : 'Star lines that shape your destiny in the zodiac.'}
             </p>
           </div>
 
@@ -559,7 +563,7 @@ export default function Home() {
               </span>
             </div>
             <p className="text-sm text-on-surface-variant">
-              Modern Divination Platform for the Intuitive Soul.
+              {t.footer_tag}
             </p>
           </div>
 

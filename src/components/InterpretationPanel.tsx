@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { TarotCardData } from "@/lib/types";
 import { Sparkles, Heart, Briefcase, Zap } from "lucide-react";
+import { useSettings } from "@/context/SettingsContext";
 
 interface InterpretationPanelProps {
   card: TarotCardData;
@@ -12,24 +13,44 @@ interface InterpretationPanelProps {
 }
 
 export default function InterpretationPanel({ card, isReversed, positionName }: InterpretationPanelProps) {
-  const interpretation = isReversed ? card.reversed : card.upright;
+  const { lang } = useSettings();
+  
+  // Selection logic for language
+  const name = (lang === 'en' && card.name_en) ? card.name_en : card.name;
+  const element = (lang === 'en' && card.element_en) ? card.element_en : card.element;
+  const keywords = (lang === 'en' && card.keywords_en) ? card.keywords_en : card.keywords;
+  
+  const interpretation = isReversed 
+    ? (lang === 'en' && card.reversed_en ? card.reversed_en : card.reversed)
+    : (lang === 'en' && card.upright_en ? card.upright_en : card.upright);
+
+  const t = {
+    reversed: lang === 'en' ? '(Reversed)' : '(Terbalik)',
+    element_label: lang === 'en' ? 'Element' : 'Elemen',
+    general: lang === 'en' ? 'General Meaning' : 'Makna Umum',
+    love: lang === 'en' ? 'Love' : 'Asmara',
+    career: lang === 'en' ? 'Career & Finance' : 'Karir & Keuangan',
+    advice_label: lang === 'en' ? 'Card Advice' : 'Nasehat Kartu',
+    advice_reversed: lang === 'en' ? 'Review your steps, there are obstacles to be aware of.' : 'Tinjau kembali langkahmu, ada hambatan yang perlu disadari.',
+    advice_upright: lang === 'en' ? 'Trust your intuition and the steps you are taking.' : 'Percaya pada intuisi dan langkah yang sedang kamu ambil.'
+  };
   
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="glass p-6 rounded-2xl border-mystic-gold/20 flex flex-col gap-6"
+      className="glass p-6 rounded-2xl border-primary/20 flex flex-col gap-6"
     >
-      <div className="flex items-center justify-between border-b border-mystic-gold/10 pb-4">
+      <div className="flex items-center justify-between border-b border-primary/10 pb-4">
         <div>
-          <h3 className="text-sm uppercase tracking-widest text-mystic-gold/60">{positionName}</h3>
-          <h2 className="text-2xl font-serif text-mystic-gold">{card.name} {isReversed && <span className="text-mystic-accent text-lg">(Terbalik)</span>}</h2>
+          <h3 className="text-sm uppercase tracking-widest text-primary/60">{positionName}</h3>
+          <h2 className="text-2xl font-serif text-primary">{name} {isReversed && <span className="text-mystic-accent text-lg">{t.reversed}</span>}</h2>
         </div>
         <div className="text-right">
-          <div className="text-xs text-mystic-fg/40 mb-1">Elemen: {card.element}</div>
+          <div className="text-xs text-on-background/40 mb-1">{t.element_label}: {element}</div>
           <div className="flex gap-1">
-            {card.keywords.slice(0, 3).map(kw => (
-              <span key={kw} className="text-[10px] px-2 py-1 bg-mystic-gold/10 rounded-full text-mystic-gold uppercase">{kw}</span>
+            {keywords.slice(0, 3).map(kw => (
+              <span key={kw} className="text-[10px] px-2 py-1 bg-primary/10 rounded-full text-primary uppercase">{kw}</span>
             ))}
           </div>
         </div>
@@ -37,10 +58,10 @@ export default function InterpretationPanel({ card, isReversed, positionName }: 
 
       <div className="space-y-6">
         <section>
-          <h4 className="flex items-center gap-2 text-mystic-gold font-bold mb-2">
-            <Zap className="w-4 h-4" /> Makna Umum
+          <h4 className="flex items-center gap-2 text-primary font-bold mb-2">
+            <Zap className="w-4 h-4" /> {t.general}
           </h4>
-          <p className="text-mystic-fg/80 leading-relaxed italic">
+          <p className="text-on-background/80 leading-relaxed italic">
             {interpretation.general}
           </p>
         </section>
@@ -48,30 +69,30 @@ export default function InterpretationPanel({ card, isReversed, positionName }: 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <section className="bg-white/5 p-4 rounded-xl">
             <h4 className="flex items-center gap-2 text-pink-400 font-bold mb-2">
-              <Heart className="w-4 h-4" /> Asmara
+              <Heart className="w-4 h-4" /> {t.love}
             </h4>
-            <p className="text-sm text-mystic-fg/70 leading-relaxed">
+            <p className="text-sm text-on-background/70 leading-relaxed">
               {interpretation.love}
             </p>
           </section>
 
           <section className="bg-white/5 p-4 rounded-xl">
             <h4 className="flex items-center gap-2 text-blue-400 font-bold mb-2">
-              <Briefcase className="w-4 h-4" /> Karir & Keuangan
+              <Briefcase className="w-4 h-4" /> {t.career}
             </h4>
-            <p className="text-sm text-mystic-fg/70 leading-relaxed">
+            <p className="text-sm text-on-background/70 leading-relaxed">
               {interpretation.career}
             </p>
           </section>
         </div>
       </div>
 
-      <div className="mt-4 p-4 border border-mystic-gold/10 rounded-xl bg-mystic-gold/5">
-        <p className="text-xs text-mystic-gold/60 text-center uppercase tracking-widest flex items-center justify-center gap-2">
-          <Sparkles className="w-3 h-3" /> Nasehat Kartu
+      <div className="mt-4 p-4 border border-primary/10 rounded-xl bg-primary/5">
+        <p className="text-xs text-primary/60 text-center uppercase tracking-widest flex items-center justify-center gap-2">
+          <Sparkles className="w-3 h-3" /> {t.advice_label}
         </p>
-        <p className="text-center mt-2 font-serif text-mystic-gold/90 italic">
-          &quot;{isReversed ? "Tinjau kembali langkahmu, ada hambatan yang perlu disadari." : "Percaya pada intuisi dan langkah yang sedang kamu ambil."}&quot;
+        <p className="text-center mt-2 font-serif text-primary/90 italic">
+          &quot;{isReversed ? t.advice_reversed : t.advice_upright}&quot;
         </p>
       </div>
     </motion.div>

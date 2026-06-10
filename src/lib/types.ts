@@ -6,13 +6,18 @@ export interface CardInterpretation {
 
 export interface TarotCardData {
   name: string;
+  name_en?: string;
   number: number;
   arcana: 'major' | 'minor';
   suit?: 'cups' | 'pentacles' | 'swords' | 'wands' | null;
   element: string;
+  element_en?: string;
   keywords: string[];
+  keywords_en?: string[];
   upright: CardInterpretation;
+  upright_en?: CardInterpretation;
   reversed: CardInterpretation;
+  reversed_en?: CardInterpretation;
 }
 
 export interface CardState {

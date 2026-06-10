@@ -3,9 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useSettings } from "@/context/SettingsContext";
+import { UI_STRINGS } from "@/lib/translations";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { lang } = useSettings();
+  const t = UI_STRINGS[lang].nav;
 
   return (
     <header className="site-header">
@@ -15,8 +19,8 @@ export default function Header() {
             <Image src="/logo.svg" alt="Tarot BPJS" width={48} height={48} className="logo" priority />
           </Link>
           <div>
-            <p className="app-name">Tarot BPJS</p>
-            <p className="app-tagline">Tarot tarot an by syd</p>
+            <p className="app-name">Arcana Mystica</p>
+            <p className="app-tagline">{lang === 'id' ? 'Platform ramalan modern' : 'Modern divination platform'}</p>
           </div>
         </div>
         <button
@@ -32,22 +36,22 @@ export default function Header() {
         </button>
         <nav className={`site-nav${menuOpen ? " open" : ""}`}>
           <Link href="/jurnal" className="nav-link" onClick={() => setMenuOpen(false)}>
-            Jurnal
+            {t.jurnal}
           </Link>
           <Link href="/belajar" className="nav-link" onClick={() => setMenuOpen(false)}>
-            Belajar
+            {t.belajar}
           </Link>
           <Link href="/kartu" className="nav-link" onClick={() => setMenuOpen(false)}>
-            Kartu
+            {t.kartu}
           </Link>
           <Link href="/daily-reading" className="nav-link" onClick={() => setMenuOpen(false)}>
-            Daily Reading
+            {t.daily}
           </Link>
           <Link href="/spread" className="nav-link" onClick={() => setMenuOpen(false)}>
-            Spread
+            {t.spread}
           </Link>
           <Link href="/setting" className="nav-link" onClick={() => setMenuOpen(false)}>
-            Setting
+            {t.setting}
           </Link>
         </nav>
       </div>

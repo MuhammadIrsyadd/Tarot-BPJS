@@ -8,9 +8,25 @@ import { getJournal, JournalEntry, deleteEntry, updateNotes, clearAllData } from
 import { getCardBySlug } from "@/lib/utils";
 import TarotCard from "@/components/TarotCard";
 
+import { useSettings } from "@/context/SettingsContext";
+
 export default function JournalPage() {
+  const { lang } = useSettings();
   const [entries, setEntries] = useState<JournalEntry[]>([]);
   const [selectedEntry, setSelectedEntry] = useState<JournalEntry | null>(null);
+
+  const t = {
+    back: lang === 'id' ? 'Kembali' : 'Back',
+    title: lang === 'id' ? 'Jurnal Bacaan' : 'Reading Journal',
+    clear_all: lang === 'id' ? 'Hapus Semua Data' : 'Clear All Data',
+    no_entries: lang === 'id' ? 'Belum ada catatan bacaan.' : 'No reading records yet.',
+    start_first: lang === 'id' ? 'Mulai bacaan pertama' : 'Start first reading',
+    delete_confirm: lang === 'id' ? "Hapus catatan ini?" : "Delete this record?",
+    clear_confirm: lang === 'id' ? "Hapus SEMUA catatan jurnal? Tindakan ini tidak bisa dibatalkan." : "Delete ALL journal entries? This action cannot be undone.",
+    notes_label: lang === 'id' ? 'Catatan Pribadi' : 'Personal Notes',
+    notes_placeholder: lang === 'id' ? "Tambah catatan refleksi atau pertanyaanmu di sini..." : "Add reflection notes or your questions here...",
+    select_entry: lang === 'id' ? 'Pilih catatan di sebelah kiri untuk melihat detail.' : 'Select an entry on the left to see details.'
+  };
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -19,7 +35,7 @@ export default function JournalPage() {
 
   const handleDelete = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    if (confirm("Hapus catatan ini?")) {
+    if (confirm(t.delete_confirm)) {
       deleteEntry(id);
       setEntries(getJournal());
       if (selectedEntry?.id === id) setSelectedEntry(null);
@@ -27,7 +43,7 @@ export default function JournalPage() {
   };
 
   const handleClearAll = () => {
-    if (confirm("Hapus SEMUA catatan jurnal? Tindakan ini tidak bisa dibatalkan.")) {
+    if (confirm(t.clear_confirm)) {
       clearAllData();
       setEntries([]);
       setSelectedEntry(null);
@@ -35,7 +51,7 @@ export default function JournalPage() {
   };
 
   const formatDate = (dateStr: string) => {
-    return new Date(dateStr).toLocaleDateString("id-ID", {
+    return new Date(dateStr).toLocaleDateString(lang === 'id' ? "id-ID" : "en-US", {
       day: "numeric",
       month: "long",
       year: "numeric",
@@ -50,11 +66,11 @@ export default function JournalPage() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6">
           <div>
-            <Link href="/" className="flex items-center gap-2 text-mystic-gold hover:text-mystic-accent transition-colors mb-4">
+            <Link href="/" className="flex items-center gap-2 text-primary hover:text-secondary transition-colors mb-4">
               <ArrowLeft className="w-5 h-5" />
-              <span>Kembali</span>
+              <span>{t.back}</span>
             </Link>
-            <h1 className="text-4xl font-serif text-mystic-gold">Jurnal Bacaan</h1>
+            <h1 className="text-4xl font-serif text-primary">{t.title}</h1>
           </div>
           
           {entries.length > 0 && (
@@ -63,7 +79,7 @@ export default function JournalPage() {
               className="text-red-400 hover:text-red-300 text-sm flex items-center gap-2 transition-colors"
             >
               <Trash2 className="w-4 h-4" />
-              Hapus Semua Data
+              {t.clear_all}
             </button>
           )}
         </div>
@@ -74,9 +90,9 @@ export default function JournalPage() {
             {entries.length === 0 ? (
               <div className="text-center py-12 glass rounded-2xl opacity-50">
                 <BookOpen className="w-12 h-12 mx-auto mb-4" />
-                <p>Belum ada catatan bacaan.</p>
+                <p>{t.no_entries}</p>
                 <Link href="/spread">
-                  <button className="text-mystic-gold underline mt-2">Mulai bacaan pertama</button>
+                  <button className="text-primary underline mt-2">{t.start_first}</button>
                 </Link>
               </div>
             ) : (
@@ -85,10 +101,10 @@ export default function JournalPage() {
                   key={entry.id}
                   layoutId={entry.id}
                   onClick={() => setSelectedEntry(entry)}
-                  className={`glass p-4 rounded-xl border-mystic-gold/10 hover:border-mystic-gold/40 cursor-pointer transition-all relative group ${selectedEntry?.id === entry.id ? 'border-mystic-gold bg-mystic-gold/5' : ''}`}
+                  className={`glass p-4 rounded-xl border-primary/10 hover:border-primary/40 cursor-pointer transition-all relative group ${selectedEntry?.id === entry.id ? 'border-primary bg-primary/5' : ''}`}
                 >
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-mystic-gold font-bold">{entry.spreadName}</h3>
+                    <h3 className="text-primary font-bold">{entry.spreadName}</h3>
                     <button 
                       onClick={(e) => handleDelete(entry.id, e)}
                       className="opacity-0 group-hover:opacity-100 p-1 hover:text-red-400 transition-all"
@@ -96,7 +112,7 @@ export default function JournalPage() {
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-mystic-fg/40 mb-3">
+                  <div className="flex items-center gap-2 text-xs text-on-background/40 mb-3">
                     <Calendar className="w-3 h-3" />
                     {formatDate(entry.date)}
                   </div>
@@ -104,7 +120,7 @@ export default function JournalPage() {
                     {entry.cards.map((c, i) => (
                       <div
                         key={i}
-                        className="relative h-16 w-10 overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-[#2c1f5e] via-[#1a1736] to-[#0b1022] shadow-[0_18px_40px_-24px_rgba(0,0,0,0.65)]"
+                        className="relative h-16 w-10 overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-background via-surface to-background shadow-[0_18px_40px_-24px_rgba(0,0,0,0.65)]"
                       >
                         <div className="absolute inset-x-2 top-2 h-8 rounded-xl bg-white/5 blur-sm" />
                         <div className="absolute inset-x-0 bottom-3 flex justify-center">
@@ -125,12 +141,12 @@ export default function JournalPage() {
                 <motion.div
                   key={selectedEntry.id}
                   initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, x: -20 }}
-                  className="glass p-8 rounded-3xl border-mystic-gold/20 sticky top-12"
+                  className="glass p-8 rounded-3xl border-primary/20 sticky top-12"
                 >
-                  <h2 className="text-3xl font-serif text-mystic-gold mb-2">{selectedEntry.spreadName}</h2>
-                  <p className="text-sm text-mystic-fg/40 mb-8 flex items-center gap-2">
+                  <h2 className="text-3xl font-serif text-primary mb-2">{selectedEntry.spreadName}</h2>
+                  <p className="text-sm text-on-background/40 mb-8 flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
                     {formatDate(selectedEntry.date)}
                   </p>
@@ -140,10 +156,10 @@ export default function JournalPage() {
                       const cardData = getCardBySlug(c.slug);
                       return (
                         <div key={i} className="flex flex-col gap-3">
-                          <span className="text-[10px] uppercase tracking-[0.35em] text-mystic-gold/60">
+                          <span className="text-[10px] uppercase tracking-[0.35em] text-primary/60">
                             {c.positionName}
                           </span>
-                          <div className="rounded-[34px] border border-white/10 bg-[radial-gradient(circle_at_top,_rgba(193,142,255,0.08),transparent_60%),linear-gradient(180deg,rgba(19,15,49,0.95),rgba(12,10,29,0.95))] p-4 shadow-[0_24px_80px_-48px_rgba(111,62,211,0.7)]">
+                          <div className="rounded-[34px] border border-white/10 bg-[radial-gradient(circle_at_top,_rgba(193,142,255,0.08),transparent_60%),linear-gradient(180deg,var(--bg-gradient-1),var(--bg-gradient-2))] p-4 shadow-[0_24px_80px_-48px_rgba(111,62,211,0.7)]">
                             <TarotCard card={cardData} slug={c.slug} isRevealed />
                           </div>
                         </div>
@@ -152,13 +168,13 @@ export default function JournalPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <h4 className="text-mystic-gold font-bold flex items-center gap-2">
+                    <h4 className="text-primary font-bold flex items-center gap-2">
                       <BookOpen className="w-4 h-4" />
-                      Catatan Pribadi
+                      {t.notes_label}
                     </h4>
                     <textarea 
-                      className="w-full bg-white/5 border border-mystic-gold/10 rounded-xl p-4 text-sm text-mystic-fg/80 outline-none focus:border-mystic-gold/40 transition-all h-32"
-                      placeholder="Tuliskan refleksimu di sini..."
+                      className="w-full bg-white/5 border border-primary/10 rounded-xl p-4 text-sm text-on-background/80 outline-none focus:border-primary/40 transition-all h-32"
+                      placeholder={t.notes_placeholder}
                       value={selectedEntry.notes}
                       onChange={(e) => {
                         const newNotes = e.target.value;
@@ -170,9 +186,9 @@ export default function JournalPage() {
                   </div>
                 </motion.div>
               ) : (
-                <div className="h-full min-h-[400px] flex flex-col items-center justify-center glass rounded-3xl border-dashed border-mystic-gold/20 opacity-30 text-center p-12">
+                <div className="h-full min-h-[400px] flex flex-col items-center justify-center glass rounded-3xl border-dashed border-primary/20 opacity-30 text-center p-12">
                   <ChevronRight className="w-12 h-12 mb-4" />
-                  <p className="text-xl font-serif">Pilih catatan untuk melihat detail</p>
+                  <p className="text-xl font-serif">{t.select_entry}</p>
                 </div>
               )}
             </AnimatePresence>

@@ -7,20 +7,38 @@ import { getCardBySlug } from "@/lib/utils";
 import TarotCard from "@/components/TarotCard";
 import InterpretationPanel from "@/components/InterpretationPanel";
 
+import { useSettings } from "@/context/SettingsContext";
+
 export default function CardDetailPage() {
+  const { lang } = useSettings();
   const { slug } = useParams();
   const card = getCardBySlug(slug as string);
 
   if (!card) {
+    const errorText = lang === 'en' ? 'Card Not Found' : 'Kartu Tidak Ditemukan';
+    const backText = lang === 'en' ? 'Back to Encyclopedia' : 'Kembali ke Ensiklopedia';
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-serif text-mystic-gold mb-4">Kartu Tidak Ditemukan</h1>
-          <Link href="/kartu" className="text-mystic-fg/60 hover:text-mystic-gold underline">Kembali ke Ensiklopedia</Link>
+          <h1 className="text-4xl font-serif text-primary mb-4">{errorText}</h1>
+          <Link href="/kartu" className="text-on-background/60 hover:text-primary underline">{backText}</Link>
         </div>
       </div>
     );
   }
+
+  const name = (lang === 'en' && card.name_en) ? card.name_en : card.name;
+  const element = (lang === 'en' && card.element_en) ? card.element_en : card.element;
+  const keywords = (lang === 'en' && card.keywords_en) ? card.keywords_en : card.keywords;
+  const t = {
+    back: lang === 'id' ? 'Kembali ke Ensiklopedia' : 'Back to Encyclopedia',
+    upright: lang === 'id' ? 'Makna Tegak (Upright)' : 'Upright Meaning',
+    reversed: lang === 'id' ? 'Makna Terbalik (Reversed)' : 'Reversed Meaning',
+    shadow_interpretation: lang === 'id' ? 'Interpretasi Bayangan' : 'Shadow Interpretation',
+    main_interpretation: lang === 'id' ? 'Interpretasi Utama' : 'Main Interpretation',
+    element_label: lang === 'id' ? 'Elemen' : 'Element',
+    number_label: lang === 'id' ? 'Nomor' : 'Number'
+  };
 
   return (
     <main className="min-h-screen p-6 md:p-12">
@@ -28,7 +46,7 @@ export default function CardDetailPage() {
         {/* Header */}
         <Link href="/kartu" className="flex items-center gap-2 text-primary hover:text-tertiary transition-colors mb-12">
           <ArrowLeft className="w-5 h-5" />
-          <span>Kembali ke Ensiklopedia</span>
+          <span>{t.back}</span>
         </Link>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
@@ -38,23 +56,23 @@ export default function CardDetailPage() {
           
           <div className="flex flex-col justify-center">
             <div className="mb-8">
-              <span className="text-mystic-gold/60 uppercase tracking-[0.3em] text-sm">{card.arcana} Arcana</span>
-              <h1 className="text-5xl font-serif text-mystic-gold mt-2">{card.name}</h1>
+              <span className="text-primary/60 uppercase tracking-[0.3em] text-sm">{card.arcana} Arcana</span>
+              <h1 className="text-5xl font-serif text-primary mt-2">{name}</h1>
               <div className="flex flex-wrap gap-2 mt-4">
-                {card.keywords.map(kw => (
-                  <span key={kw} className="px-3 py-1 glass text-xs text-mystic-gold rounded-full uppercase border-mystic-gold/20">{kw}</span>
+                {keywords.map(kw => (
+                  <span key={kw} className="px-3 py-1 glass text-xs text-primary rounded-full uppercase border-primary/20">{kw}</span>
                 ))}
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-6">
               <div>
-                <h4 className="text-xs text-mystic-fg/40 uppercase mb-2">Elemen</h4>
-                <p className="text-mystic-gold font-bold">{card.element}</p>
+                <h4 className="text-xs text-on-background/40 uppercase mb-2">{t.element_label}</h4>
+                <p className="text-primary font-bold">{element}</p>
               </div>
               <div>
-                <h4 className="text-xs text-mystic-fg/40 uppercase mb-2">Nomor</h4>
-                <p className="text-mystic-gold font-bold">{card.number}</p>
+                <h4 className="text-xs text-on-background/40 uppercase mb-2">{t.number_label}</h4>
+                <p className="text-primary font-bold">{card.number}</p>
               </div>
             </div>
           </div>
@@ -62,17 +80,17 @@ export default function CardDetailPage() {
 
         <div className="space-y-12">
           <div className="flex flex-col gap-6">
-            <h2 className="text-2xl font-serif text-mystic-gold flex items-center gap-3">
-              <Sun className="w-6 h-6" /> Makna Tegak (Upright)
+            <h2 className="text-2xl font-serif text-primary flex items-center gap-3">
+              <Sun className="w-6 h-6" /> {t.upright}
             </h2>
-            <InterpretationPanel card={card} isReversed={false} positionName="Interpretasi Utama" />
+            <InterpretationPanel card={card} isReversed={false} positionName={t.main_interpretation} />
           </div>
 
           <div className="flex flex-col gap-6">
-            <h2 className="text-2xl font-serif text-mystic-accent flex items-center gap-3">
-              <Moon className="w-6 h-6" /> Makna Terbalik (Reversed)
+            <h2 className="text-2xl font-serif text-secondary flex items-center gap-3">
+              <Moon className="w-6 h-6" /> {t.reversed}
             </h2>
-            <InterpretationPanel card={card} isReversed={true} positionName="Interpretasi Bayangan" />
+            <InterpretationPanel card={card} isReversed={true} positionName={t.shadow_interpretation} />
           </div>
         </div>
       </div>

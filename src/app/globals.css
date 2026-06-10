@@ -64,6 +64,12 @@
   --outline-variant: #3d4d90;
   --surface-tint: #8870ff;
   
+  /* Background Glows */
+  --bg-glow-1: rgba(193, 142, 255, 0.22);
+  --bg-glow-2: rgba(118, 224, 255, 0.20);
+  --bg-gradient-1: rgba(12, 10, 31, 0.96);
+  --bg-gradient-2: rgba(16, 23, 55, 0.98);
+
   /* Typography */
   --font-display-lg: "Playfair Display", serif;
   --font-headline-lg: "Playfair Display", serif;
@@ -71,13 +77,49 @@
   --font-body-lg: "Inter", sans-serif;
   --font-body-md: "Inter", sans-serif;
   --font-label-md: "Inter", sans-serif;
-  --font-label-sm: "Inter", sans-serif;
+  /* Default (Cosmic) variables already set as --color-* */
+}
+
+[data-theme='emerald'] {
+  --background: #061a12;
+  --on-background: #e6f2ee;
+  --primary: #4ade80;
+  --on-primary: #052e16;
+  --primary-container: #22c55e;
+  --on-primary-container: #f0fdf4;
+  --secondary: #fbbf24;
+  --on-secondary: #451a03;
+  --surface: #0a2e1f;
+  --outline: #10b981;
+  --surface-tint: #059669;
+  --bg-glow-1: rgba(74, 222, 128, 0.15);
+  --bg-glow-2: rgba(251, 191, 36, 0.12);
+  --bg-gradient-1: rgba(5, 46, 22, 0.96);
+  --bg-gradient-2: rgba(6, 26, 18, 0.98);
+}
+
+[data-theme='royal'] {
+  --background: #1a0505;
+  --on-background: #fdf2f2;
+  --primary: #f87171;
+  --on-primary: #450a0a;
+  --primary-container: #dc2626;
+  --on-primary-container: #fef2f2;
+  --secondary: #fbbf24;
+  --on-secondary: #451a03;
+  --surface: #2d0a0a;
+  --outline: #ef4444;
+  --surface-tint: #b91c1c;
+  --bg-glow-1: rgba(248, 113, 113, 0.18);
+  --bg-glow-2: rgba(251, 191, 36, 0.15);
+  --bg-gradient-1: rgba(69, 10, 10, 0.96);
+  --bg-gradient-2: rgba(26, 5, 5, 0.98);
 }
 
 body {
-  background-image: radial-gradient(circle at top left, rgba(193, 142, 255, 0.22), transparent 24%),
-                    radial-gradient(circle at bottom right, rgba(118, 224, 255, 0.20), transparent 30%),
-                    linear-gradient(180deg, rgba(12, 10, 31, 0.96), rgba(16, 23, 55, 0.98));
+  background-image: radial-gradient(circle at top left, var(--bg-glow-1), transparent 24%),
+                    radial-gradient(circle at bottom right, var(--bg-glow-2), transparent 30%),
+                    linear-gradient(180deg, var(--bg-gradient-1), var(--bg-gradient-2));
   background-color: var(--background);
   background-attachment: fixed;
   color: var(--on-background);
