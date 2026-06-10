@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Tarot BPJS",
     images: [
       {
-        url: "https://tarot-bpjs.vercel.app/logo.png",
+        url: "https://tarot-bpjs.vercel.app/logo (1).png",
         width: 512,
         height: 512,
         alt: "Tarot BPJS logo",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tarot BPJS",
     description: "Tarot tarot an by syd",
-    images: ["https://tarot-bpjs.vercel.app/logo.png"],
+    images: ["https://tarot-bpjs.vercel.app/logo (1).png"],
   },
 };
 
