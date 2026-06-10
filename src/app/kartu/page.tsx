@@ -19,7 +19,7 @@ export default function EncyclopediaPage() {
   });
 
   return (
-    <main className="min-h-screen p-6 md:p-12 cosmic-bg">
+    <main className="min-h-screen p-6 md:p-12">
       <div className="max-w-7xl mx-auto w-full">
         <div className="glass-panel-interactive p-8 rounded-3xl border border-secondary/20 shadow-[0_26px_80px_-40px_rgba(139,92,255,0.35)] mb-12">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">

@@ -23,7 +23,7 @@ export default function CardDetailPage() {
   }
 
   return (
-    <main className="min-h-screen p-6 md:p-12 cosmic-bg">
+    <main className="min-h-screen p-6 md:p-12">
       <div className="max-w-4xl mx-auto w-full glass-panel-interactive p-8 rounded-3xl border border-secondary/20 shadow-[0_30px_90px_-50px_rgba(139,92,255,0.45)]">
         {/* Header */}
         <Link href="/kartu" className="flex items-center gap-2 text-primary hover:text-tertiary transition-colors mb-12">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -10,7 +11,9 @@ export default function Header() {
     <header className="site-header">
       <div className="header-inner">
         <div className="brand">
-          <img src="/logo.svg" alt="Tarot BPJS" className="logo" />
+          <Link href="/">
+            <Image src="/logo.svg" alt="Tarot BPJS" width={48} height={48} className="logo" priority />
+          </Link>
           <div>
             <p className="app-name">Tarot BPJS</p>
             <p className="app-tagline">Tarot tarot an by syd</p>
@@ -36,6 +39,9 @@ export default function Header() {
           </Link>
           <Link href="/kartu" className="nav-link" onClick={() => setMenuOpen(false)}>
             Kartu
+          </Link>
+          <Link href="/daily-reading" className="nav-link" onClick={() => setMenuOpen(false)}>
+            Daily Reading
           </Link>
           <Link href="/spread" className="nav-link" onClick={() => setMenuOpen(false)}>
             Spread

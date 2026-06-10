@@ -8,6 +8,20 @@ export interface SpreadType {
 
 export const SPREADS: SpreadType[] = [
   {
+    id: "daily-six",
+    name: "Daily Reading",
+    description: "Spread harian 6 kartu dengan posisi Atas, empat kartu utama, dan Bawah.",
+    cardsCount: 6,
+    positions: [
+      "Atas - Fokus Hari Ini",
+      "Utama 1 - Energi Pagi",
+      "Utama 2 - Tantangan",
+      "Utama 3 - Peluang",
+      "Utama 4 - Tindakan Terbaik",
+      "Bawah - Pesan Tersembunyi"
+    ]
+  },
+  {
     id: "five-mystic",
     name: "Mystic Five (Standard)",
     description: "Spread 5 kartu dengan Atap (Masa Depan/Tujuan) dan Alas (Fondasi).",

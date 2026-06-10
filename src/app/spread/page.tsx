@@ -23,14 +23,11 @@ export default function SpreadPage() {
   const [isSaved, setIsSaved] = useState(false);
 
   const allRevealed = useMemo(() => {
-    const revealed = reading && reading.cards.length > 0 && reading.cards.every(c => c.revealed);
-    console.log("All revealed?", revealed, "Reading:", reading);
-    return revealed;
+    return !!reading && reading.cards.length > 0 && reading.cards.every((c) => c.revealed);
   }, [reading]);
 
   const conclusion = useMemo(() => {
     if (!allRevealed || !reading || !selectedSpread) {
-      console.log("Conclusion condition not met:", { allRevealed, hasReading: !!reading, hasSpread: !!selectedSpread });
       return null;
     }
     const cardsForConclusion = reading.cards.map((c, i) => ({
@@ -38,9 +35,7 @@ export default function SpreadPage() {
       isReversed: c.isReversed,
       positionName: selectedSpread.positions[i]
     }));
-    const res = generateConclusion(cardsForConclusion);
-    console.log("Conclusion generated:", res);
-    return res;
+    return generateConclusion(cardsForConclusion);
   }, [allRevealed, reading, selectedSpread]);
 
   const handleSelectSpread = (spread: SpreadType) => {

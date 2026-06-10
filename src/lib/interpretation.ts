@@ -27,9 +27,11 @@ export function generateConclusion(cards: { card: TarotCardData; isReversed: boo
   });
 
   // Structural Narrative
-  const narrativeSummary = validCards.length >= 5 ? `
+  const firstCard = validCards[0];
+  const lastCard = validCards[validCards.length - 1];
+  const narrativeSummary = validCards.length >= 5 && firstCard && lastCard ? `
 ### Analisis Mendalam
-Alur energi dimulai dari **${validCards[0].positionName}** sebagai fondasi, di mana ${validCards[0].card.name} memberikan pijakan awal. Puncak dari bacaan ini terlihat pada posisi **Atap (${validCards[validCards.length-1].positionName})**, yang menjadi titik terang atau tujuan yang sedang Anda tuju.
+Alur energi dimulai dari **${firstCard.positionName}**, di mana ${firstCard.card.name} memberi nada awal bacaan. Pesan kemudian ditutup oleh **${lastCard.positionName}**, saat ${lastCard.card.name} memperlihatkan lapisan refleksi yang perlu dibawa setelah sesi ini.
   ` : "";
 
   return {
