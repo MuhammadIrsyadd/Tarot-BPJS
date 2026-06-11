@@ -77,12 +77,15 @@ export default function SpreadPage() {
   const handleSave = () => {
     if (!reading || !selectedSpread) return;
     
+    const spreadName = (UI_STRINGS[lang].spreads as Record<string, any>)[selectedSpread.name] || selectedSpread.name;
+    const positions = selectedSpread.positions.map(p => (UI_STRINGS[lang].spreads.positions as Record<string, string>)[p] || p);
+
     saveReading({
-      spreadName: selectedSpread.name,
+      spreadName: spreadName,
       cards: reading.cards.map((c, i) => ({
         slug: c.slug,
         isReversed: c.isReversed,
-        positionName: selectedSpread.positions[i]
+        positionName: positions[i]
       }))
     });
     
@@ -134,6 +137,7 @@ export default function SpreadPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SPREADS.map((spread) => {
               const displayName = (UI_STRINGS[lang].spreads as Record<string, string>)[spread.name] || spread.name;
+              const displayDesc = (UI_STRINGS[lang].spreads.descriptions as Record<string, string>)[spread.id] || spread.description;
               return (
                 <motion.button
                   key={spread.id}
@@ -151,7 +155,7 @@ export default function SpreadPage() {
                     </span>
                   </div>
                   <h3 className="text-xl font-bold text-primary mb-2">{displayName}</h3>
-                  <p className="text-sm text-on-background/60">{spread.description}</p>
+                  <p className="text-sm text-on-background/60">{displayDesc}</p>
                 </motion.button>
               );
             })}
@@ -189,20 +193,23 @@ export default function SpreadPage() {
                     <p className="text-primary animate-pulse uppercase tracking-[0.3em] text-sm">{t.shuffling}</p>
                   </div>
                 ) : (
-                  reading?.cards.map((cardState, index) => (
-                    <div key={index} className="flex flex-col items-center gap-4">
-                      <div className="text-xs uppercase tracking-widest text-primary/60">
-                        {selectedSpread.positions[index]}
+                  reading?.cards.map((cardState, index) => {
+                    const positionLabel = (UI_STRINGS[lang].spreads.positions as Record<string, string>)[selectedSpread.positions[index]] || selectedSpread.positions[index];
+                    return (
+                      <div key={index} className="flex flex-col items-center gap-4">
+                        <div className="text-xs uppercase tracking-widest text-primary/60">
+                          {positionLabel}
+                        </div>
+                        <TarotCard 
+                          card={cardState.card} 
+                          slug={cardState.slug}
+                          isReversed={cardState.isReversed} 
+                          isRevealed={cardState.revealed}
+                          onReveal={() => handleRevealCard(index)}
+                        />
                       </div>
-                      <TarotCard 
-                        card={cardState.card} 
-                        slug={cardState.slug}
-                        isReversed={cardState.isReversed} 
-                        isRevealed={cardState.revealed}
-                        onReveal={() => handleRevealCard(index)}
-                      />
-                    </div>
-                  ))
+                    );
+                  })
                 )}
               </div>
             </div>
@@ -221,7 +228,7 @@ export default function SpreadPage() {
                     <InterpretationPanel 
                       card={reading.cards[selectedCardIndex].card}
                       isReversed={reading.cards[selectedCardIndex].isReversed}
-                      positionName={selectedSpread.positions[selectedCardIndex]}
+                      positionName={(UI_STRINGS[lang].spreads.positions as Record<string, string>)[selectedSpread.positions[selectedCardIndex]] || selectedSpread.positions[selectedCardIndex]}
                     />
                   </motion.div>
                 )}

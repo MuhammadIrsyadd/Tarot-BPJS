@@ -9,11 +9,41 @@ export const UI_STRINGS = {
       setting: "Pengaturan"
     },
     spreads: {
-      "Tebaran Tiga Kartu": "Three Card Spread",
-      "Tebaran Hubungan": "Relationship Spread",
-      "Tebaran Karir": "Career Spread",
+      "Daily Reading": "Bacaan Harian",
+      "Mystic Five (Standard)": "Mystic Five (Standar)",
+      "Satu Kartu": "Satu Kartu",
+      "Tiga Kartu": "Tiga Kartu",
+      "Spread Cinta": "Tebaran Hubungan",
+      "Spread Karir": "Tebaran Karir",
       "Celtic Cross": "Celtic Cross",
-      "Daily Reading": "Daily Reading"
+      positions: {
+        "Atas - Fokus Hari Ini": "Atas - Fokus Hari Ini",
+        "Utama 1 - Energi Pagi": "Utama 1 - Energi Pagi",
+        "Utama 2 - Tantangan": "Utama 2 - Tantangan",
+        "Utama 3 - Peluang": "Utama 3 - Peluang",
+        "Utama 4 - Tindakan Terbaik": "Utama 4 - Tindakan Terbaik",
+        "Bawah - Pesan Tersembunyi": "Bawah - Pesan Tersembunyi",
+        "Fondasi (Bawah)": "Fondasi (Bawah)",
+        "Masa Lalu": "Masa Lalu",
+        "Masa Kini": "Masa Kini",
+        "Masa Depan": "Masa Depan",
+        "Tujuan Akhir (Atas)": "Tujuan Akhir (Atas)",
+        "Jawaban": "Jawaban",
+        "Diri Sendiri": "Diri Sendiri",
+        "Pasangan / Gebetan": "Pasangan / Gebetan",
+        "Dinamika Hubungan": "Dinamika Hubungan",
+        "Posisi Saat Ini": "Posisi Saat Ini",
+        "Tantangan": "Tantangan",
+        "Langkah Selanjutnya": "Langkah Selanjutnya"
+      },
+      descriptions: {
+        "daily-six": "Spread harian 6 kartu dengan posisi Atas, empat kartu utama, dan Bawah.",
+        "five-mystic": "Spread 5 kartu dengan Atap (Masa Depan/Tujuan) dan Alas (Fondasi).",
+        "single": "Jawaban cepat untuk pertanyaan yang spesifik.",
+        "three-cards": "Masa Lalu, Sekarang, dan Masa Depan.",
+        "love": "Memahami dinamika hubungan asmara.",
+        "career": "Panduan untuk pekerjaan dan tujuan profesional."
+      }
     },
     home: {
       tagline: "Unveil Your Destiny",
@@ -41,8 +71,8 @@ export const UI_STRINGS = {
       clear_data: "Hapus Semua Data Lokal",
       reset_confirm: "Hapus semua data (jurnal dan pengaturan)? Tindakan ini permanen."
     }
-  },
-  en: {
+    },
+    en: {
     nav: {
       jurnal: "Journal",
       belajar: "Learn",
@@ -52,11 +82,41 @@ export const UI_STRINGS = {
       setting: "Settings"
     },
     spreads: {
-      "Tebaran Tiga Kartu": "Three Card Spread",
-      "Tebaran Hubungan": "Relationship Spread",
-      "Tebaran Karir": "Career Spread",
+      "Daily Reading": "Daily Reading",
+      "Mystic Five (Standard)": "Mystic Five (Standard)",
+      "Satu Kartu": "Single Card",
+      "Tiga Kartu": "Three Cards",
+      "Spread Cinta": "Love Spread",
+      "Spread Karir": "Career Spread",
       "Celtic Cross": "Celtic Cross",
-      "Daily Reading": "Daily Reading"
+      positions: {
+        "Atas - Fokus Hari Ini": "Top - Today's Focus",
+        "Utama 1 - Energi Pagi": "Main 1 - Morning Energy",
+        "Utama 2 - Tantangan": "Main 2 - Challenge",
+        "Utama 3 - Peluang": "Main 3 - Opportunity",
+        "Utama 4 - Tindakan Terbaik": "Main 4 - Best Action",
+        "Bawah - Pesan Tersembunyi": "Bottom - Hidden Message",
+        "Fondasi (Bawah)": "Foundation (Bottom)",
+        "Masa Lalu": "Past",
+        "Masa Kini": "Present",
+        "Masa Depan": "Future",
+        "Tujuan Akhir (Atas)": "Outcome (Top)",
+        "Jawaban": "Answer",
+        "Diri Sendiri": "Self",
+        "Pasangan / Gebetan": "Partner / Crush",
+        "Dinamika Hubungan": "Relationship Dynamics",
+        "Posisi Saat Ini": "Current Position",
+        "Tantangan": "Challenges",
+        "Langkah Selanjutnya": "Next Steps"
+      },
+      descriptions: {
+        "daily-six": "6-card daily spread with Top, four Main cards, and Bottom positions.",
+        "five-mystic": "5-card spread with Roof (Future/Goal) and Floor (Foundation).",
+        "single": "Quick answer to a specific question.",
+        "three-cards": "Past, Present, and Future.",
+        "love": "Understand the dynamics of a romantic relationship.",
+        "career": "Guidance for work and professional goals."
+      }
     },
     home: {
       tagline: "Unveil Your Destiny",
