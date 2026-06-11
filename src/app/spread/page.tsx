@@ -77,8 +77,8 @@ export default function SpreadPage() {
   const handleSave = () => {
     if (!reading || !selectedSpread) return;
     
-    const spreadName = (UI_STRINGS[lang].spreads as Record<string, any>)[selectedSpread.name] || selectedSpread.name;
-    const positions = selectedSpread.positions.map(p => (UI_STRINGS[lang].spreads.positions as Record<string, string>)[p] || p);
+    const spreadName = (UI_STRINGS[lang].spreads as unknown as unknown as Record<string, string>)[selectedSpread.name] || selectedSpread.name;
+    const positions = selectedSpread.positions.map(p => (UI_STRINGS[lang].spreads.positions as unknown as Record<string, string>)[p] || p);
 
     saveReading({
       spreadName: spreadName,
@@ -136,8 +136,8 @@ export default function SpreadPage() {
         {!selectedSpread ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SPREADS.map((spread) => {
-              const displayName = (UI_STRINGS[lang].spreads as Record<string, string>)[spread.name] || spread.name;
-              const displayDesc = (UI_STRINGS[lang].spreads.descriptions as Record<string, string>)[spread.id] || spread.description;
+              const displayName = (UI_STRINGS[lang].spreads as unknown as Record<string, string>)[spread.name] || spread.name;
+              const displayDesc = (UI_STRINGS[lang].spreads.descriptions as unknown as Record<string, string>)[spread.id] || spread.description;
               return (
                 <motion.button
                   key={spread.id}
@@ -165,7 +165,7 @@ export default function SpreadPage() {
             {/* Reading Table */}
             <div className="flex flex-col items-center">
               <h2 className="text-2xl font-serif text-primary mb-8">
-                {(UI_STRINGS[lang].spreads as Record<string, string>)[selectedSpread.name] || selectedSpread.name}
+                {(UI_STRINGS[lang].spreads as unknown as Record<string, string>)[selectedSpread.name] || selectedSpread.name}
               </h2>
               
               <div className="flex flex-wrap justify-center gap-8 min-h-[400px] items-center">
@@ -194,7 +194,7 @@ export default function SpreadPage() {
                   </div>
                 ) : (
                   reading?.cards.map((cardState, index) => {
-                    const positionLabel = (UI_STRINGS[lang].spreads.positions as Record<string, string>)[selectedSpread.positions[index]] || selectedSpread.positions[index];
+                    const positionLabel = (UI_STRINGS[lang].spreads.positions as unknown as Record<string, string>)[selectedSpread.positions[index]] || selectedSpread.positions[index];
                     return (
                       <div key={index} className="flex flex-col items-center gap-4">
                         <div className="text-xs uppercase tracking-widest text-primary/60">
@@ -228,7 +228,7 @@ export default function SpreadPage() {
                     <InterpretationPanel 
                       card={reading.cards[selectedCardIndex].card}
                       isReversed={reading.cards[selectedCardIndex].isReversed}
-                      positionName={(UI_STRINGS[lang].spreads.positions as Record<string, string>)[selectedSpread.positions[selectedCardIndex]] || selectedSpread.positions[selectedCardIndex]}
+                      positionName={(UI_STRINGS[lang].spreads.positions as unknown as Record<string, string>)[selectedSpread.positions[selectedCardIndex]] || selectedSpread.positions[selectedCardIndex]}
                     />
                   </motion.div>
                 )}
