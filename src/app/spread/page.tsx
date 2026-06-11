@@ -50,8 +50,8 @@ export default function SpreadPage() {
       isReversed: c.isReversed,
       positionName: selectedSpread.positions[i]
     }));
-    return generateConclusion(cardsForConclusion);
-  }, [allRevealed, reading, selectedSpread]);
+    return generateConclusion(cardsForConclusion, lang);
+  }, [allRevealed, reading, selectedSpread, lang]);
 
   const handleSelectSpread = (spread: SpreadType) => {
     setSelectedSpread(spread);
@@ -133,7 +133,7 @@ export default function SpreadPage() {
         {!selectedSpread ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SPREADS.map((spread) => {
-              const displayName = (UI_STRINGS[lang].spreads as any)[spread.name] || spread.name;
+              const displayName = (UI_STRINGS[lang].spreads as Record<string, string>)[spread.name] || spread.name;
               return (
                 <motion.button
                   key={spread.id}
@@ -161,7 +161,7 @@ export default function SpreadPage() {
             {/* Reading Table */}
             <div className="flex flex-col items-center">
               <h2 className="text-2xl font-serif text-primary mb-8">
-                {(UI_STRINGS[lang].spreads as any)[selectedSpread.name] || selectedSpread.name}
+                {(UI_STRINGS[lang].spreads as Record<string, string>)[selectedSpread.name] || selectedSpread.name}
               </h2>
               
               <div className="flex flex-wrap justify-center gap-8 min-h-[400px] items-center">

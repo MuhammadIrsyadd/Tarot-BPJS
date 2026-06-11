@@ -1,10 +1,9 @@
 import { TarotCardData } from "./types";
-import { getLang } from "./storage";
 
-export function generateConclusion(cards: { card: TarotCardData; isReversed: boolean; positionName: string }[]) {
-  // Use storage helper to get current language
-  const lang = getLang();
-
+export function generateConclusion(
+  cards: { card: TarotCardData; isReversed: boolean; positionName: string }[],
+  lang: 'id' | 'en' = 'id'
+) {
   // Filter out any undefined or null cards to prevent crashes
   const validCards = cards.filter(c => c && c.card);
   

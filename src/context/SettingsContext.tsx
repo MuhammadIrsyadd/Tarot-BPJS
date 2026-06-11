@@ -3,8 +3,8 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { getTheme, setTheme, getLang, setLang } from '@/lib/storage';
 
-type Theme = 'cosmic' | 'emerald' | 'royal';
-type Lang = 'id' | 'en';
+export type Theme = 'cosmic' | 'emerald' | 'royal';
+export type Lang = 'id' | 'en';
 
 interface SettingsContextType {
   theme: Theme;
@@ -16,34 +16,48 @@ interface SettingsContextType {
 const SettingsContext = createContext<SettingsContextType | undefined>(undefined);
 
 export function SettingsProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setInternalTheme] = useState<Theme>('cosmic');
-  const [lang, setInternalLang] = useState<Lang>('id');
+  const [settings, setSettings] = useState<{ theme: Theme; lang: Lang }>({
+    theme: 'cosmic',
+    lang: 'id',
+  });
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setInternalTheme(getTheme() as Theme);
-    setInternalLang(getLang() as Lang);
-    setMounted(true);
+    const timer = setTimeout(() => {
+      setSettings({
+        theme: getTheme() as Theme,
+        lang: getLang() as Lang,
+      });
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
     if (mounted) {
-      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-theme', settings.theme);
     }
-  }, [theme, mounted]);
+  }, [settings.theme, mounted]);
 
   const updateTheme = (newTheme: Theme) => {
-    setInternalTheme(newTheme);
+    setSettings(prev => ({ ...prev, theme: newTheme }));
     setTheme(newTheme);
   };
 
   const updateLang = (newLang: Lang) => {
-    setInternalLang(newLang);
+    setSettings(prev => ({ ...prev, lang: newLang }));
     setLang(newLang);
   };
 
   return (
-    <SettingsContext.Provider value={{ theme, lang, updateTheme, updateLang }}>
+    <SettingsContext.Provider 
+      value={{ 
+        theme: settings.theme, 
+        lang: settings.lang, 
+        updateTheme, 
+        updateLang 
+      }}
+    >
       {children}
     </SettingsContext.Provider>
   );

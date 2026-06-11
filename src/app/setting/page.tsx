@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowLeft, Settings as SettingsIcon, Trash2, Globe, Palette, ShieldCheck, Check } from "lucide-react";
 import { clearAllData } from "@/lib/storage";
-import { useSettings } from "@/context/SettingsContext";
+import { useSettings, type Theme, type Lang } from "@/context/SettingsContext";
 import { UI_STRINGS } from "@/lib/translations";
 
 export default function SettingsPage() {
@@ -18,7 +18,7 @@ export default function SettingsPage() {
     }
   };
 
-  const themes = [
+  const themes: { id: Theme; name: string; color: string }[] = [
     { id: 'cosmic', name: 'Cosmic', color: 'bg-[#15204f]' },
     { id: 'emerald', name: 'Emerald', color: 'bg-[#0a2e1f]' },
     { id: 'royal', name: 'Royal', color: 'bg-[#2d0a0a]' },
@@ -48,7 +48,7 @@ export default function SettingsPage() {
                 {themes.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => updateTheme(item.id as any)}
+                    onClick={() => updateTheme(item.id)}
                     className={`relative overflow-hidden rounded-xl border-2 p-4 text-left transition-all ${
                       theme === item.id ? 'border-primary bg-primary/10' : 'border-white/5 bg-white/5 hover:border-white/20'
                     }`}
@@ -69,13 +69,13 @@ export default function SettingsPage() {
             <div className="space-y-4">
               <span className="text-sm opacity-60">{t.interpretation_lang}</span>
               <div className="grid grid-cols-2 gap-4">
-                {[
+                {([
                   { id: 'id', name: 'Bahasa Indonesia' },
                   { id: 'en', name: 'English' }
-                ].map((item) => (
+                ] as { id: Lang; name: string }[]).map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => updateLang(item.id as any)}
+                    onClick={() => updateLang(item.id)}
                     className={`relative rounded-xl border-2 p-4 text-left transition-all ${
                       lang === item.id ? 'border-primary bg-primary/10' : 'border-white/5 bg-white/5 hover:border-white/20'
                     }`}

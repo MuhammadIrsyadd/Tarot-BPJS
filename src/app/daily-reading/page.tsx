@@ -101,9 +101,10 @@ export default function DailyReadingPage() {
         card: card.card,
         isReversed: card.isReversed,
         positionName: DAILY_POSITIONS[index].name
-      }))
+      })),
+      lang
     );
-  }, [allDrawn, drawnCards]);
+  }, [allDrawn, drawnCards, lang, DAILY_POSITIONS]);
 
   const shuffleDeck = () => {
     setIsShuffling(true);
