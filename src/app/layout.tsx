@@ -10,19 +10,20 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Arcana Mystica | Modern Tarot & Divination Platform",
-  description: "Unveil your destiny with Arcana Mystica. Experience modern tarot readings, daily guidance, and a comprehensive card encyclopedia for your spiritual journey.",
-  keywords: ["tarot", "divination", "daily reading", "spiritual guidance", "tarot cards", "mysticism"],
+  title: "Tarot BPJS - Arcana Mystica | Modern Tarot & Divination",
+  description: "Tarot BPJS (Bacaan Petunjuk Jiwa Sejati) oleh Arcana Mystica. Platform ramalan modern untuk panduan harian, asmara, dan karir dengan antarmuka esoteris yang indah.",
+  keywords: ["tarot bpjs", "bacaan petunjuk jiwa sejati", "tarot indonesia", "daily tarot", "ramalan kartu", "arcana mystica"],
   verification: {
-    google: "wjVywy-HvCzYXe6LiZS6HQxN1iAbipVLPyE8tYxH5e8"},
+    google: "wjVywy-HvCzYXe6LiZS6HQxN1iAbipVLPyE8tYxH5e8",
+  },
   icons: {
     icon: "/logo.svg",
     shortcut: "/logo.svg",
     apple: "/logo.svg",
   },
   openGraph: {
-    title: "Arcana Mystica | Modern Tarot & Divination Platform",
-    description: "Unveil your destiny with Arcana Mystica. Experience modern tarot readings and daily guidance.",
+    title: "Tarot BPJS - Arcana Mystica | Modern Tarot & Divination",
+    description: "Tarot BPJS (Bacaan Petunjuk Jiwa Sejati) oleh Arcana Mystica. Platform ramalan modern untuk panduan harian, asmara, dan karir.",
     url: "https://tarot-bpjs.vercel.app",
     siteName: "Arcana Mystica",
     images: [
@@ -37,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arcana Mystica | Modern Tarot & Divination Platform",
-    description: "Unveil your destiny with Arcana Mystica. Experience modern tarot readings.",
+    title: "Tarot BPJS - Arcana Mystica | Modern Tarot & Divination",
+    description: "Tarot BPJS (Bacaan Petunjuk Jiwa Sejati) oleh Arcana Mystica. Platform ramalan modern.",
     images: ["/logo (1).png"],
   },
 };
@@ -61,4 +62,3 @@ export default function RootLayout({
     </html>
   );
 }
-
