@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   title: "Arcana Mystica | Modern Tarot & Divination Platform",
   description: "Unveil your destiny with Arcana Mystica. Experience modern tarot readings, daily guidance, and a comprehensive card encyclopedia for your spiritual journey.",
   keywords: ["tarot", "divination", "daily reading", "spiritual guidance", "tarot cards", "mysticism"],
+  verification: {
+    google: "wjVywy-HvCzYXe6LiZS6HQxN1iAbipVLPyE8tYxH5e8"},
   icons: {
     icon: "/logo.svg",
     shortcut: "/logo.svg",
