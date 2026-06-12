@@ -10,33 +10,34 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Tarot BPJS",
-  description: "Tarot tarot an by syd",
+  title: "Arcana Mystica | Modern Tarot & Divination Platform",
+  description: "Unveil your destiny with Arcana Mystica. Experience modern tarot readings, daily guidance, and a comprehensive card encyclopedia for your spiritual journey.",
+  keywords: ["tarot", "divination", "daily reading", "spiritual guidance", "tarot cards", "mysticism"],
   icons: {
     icon: "/logo.svg",
     shortcut: "/logo.svg",
     apple: "/logo.svg",
   },
   openGraph: {
-    title: "Tarot BPJS",
-    description: "Tarot tarot an by syd",
+    title: "Arcana Mystica | Modern Tarot & Divination Platform",
+    description: "Unveil your destiny with Arcana Mystica. Experience modern tarot readings and daily guidance.",
     url: "https://tarot-bpjs.vercel.app",
-    siteName: "Tarot BPJS",
+    siteName: "Arcana Mystica",
     images: [
       {
-        url: "https://tarot-bpjs.vercel.app/logo (1).png",
+        url: "/logo (1).png",
         width: 512,
         height: 512,
-        alt: "Tarot BPJS logo",
+        alt: "Arcana Mystica logo",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tarot BPJS",
-    description: "Tarot tarot an by syd",
-    images: ["https://tarot-bpjs.vercel.app/logo (1).png"],
+    title: "Arcana Mystica | Modern Tarot & Divination Platform",
+    description: "Unveil your destiny with Arcana Mystica. Experience modern tarot readings.",
+    images: ["/logo (1).png"],
   },
 };
 
