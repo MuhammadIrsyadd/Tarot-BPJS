@@ -1,13 +1,26 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Trash2, Calendar, BookOpen, ChevronRight } from "lucide-react";
+import {
+  ArrowLeft,
+  Trash2,
+  Calendar,
+  BookOpen,
+  ChevronRight,
+  Sparkles,
+} from "lucide-react";
 import Link from "next/link";
-import { getJournal, JournalEntry, deleteEntry, updateNotes, clearAllData } from "@/lib/storage";
+import {
+  getJournal,
+  JournalEntry,
+  deleteEntry,
+  updateNotes,
+  clearAllData,
+} from "@/lib/storage";
 import { getCardBySlug } from "@/lib/utils";
-import TarotCard from "@/components/TarotCard";
-
+import TarotCard, { getTarotImageUrl } from "@/components/TarotCard";
 import { useSettings } from "@/context/SettingsContext";
 
 export default function JournalPage() {
@@ -16,29 +29,51 @@ export default function JournalPage() {
   const [selectedEntry, setSelectedEntry] = useState<JournalEntry | null>(null);
 
   const t = {
-    back: lang === 'id' ? 'Kembali' : 'Back',
-    title: lang === 'id' ? 'Jurnal Bacaan' : 'Reading Journal',
-    clear_all: lang === 'id' ? 'Hapus Semua Data' : 'Clear All Data',
-    no_entries: lang === 'id' ? 'Belum ada catatan bacaan.' : 'No reading records yet.',
-    start_first: lang === 'id' ? 'Mulai bacaan pertama' : 'Start first reading',
-    delete_confirm: lang === 'id' ? "Hapus catatan ini?" : "Delete this record?",
-    clear_confirm: lang === 'id' ? "Hapus SEMUA catatan jurnal? Tindakan ini tidak bisa dibatalkan." : "Delete ALL journal entries? This action cannot be undone.",
-    notes_label: lang === 'id' ? 'Catatan Pribadi' : 'Personal Notes',
-    notes_placeholder: lang === 'id' ? "Tambah catatan refleksi atau pertanyaanmu di sini..." : "Add reflection notes or your questions here...",
-    select_entry: lang === 'id' ? 'Pilih catatan di sebelah kiri untuk melihat detail.' : 'Select an entry on the left to see details.'
+    back: lang === "id" ? "Kembali" : "Back",
+    badge: lang === "id" ? "Kronik Perjalanan Jiwa" : "Soul Chronicle",
+    title: lang === "id" ? "Jurnal Bacaan" : "Reading Journal",
+    clear_all: lang === "id" ? "Hapus Semua Data" : "Clear All Data",
+    no_entries:
+      lang === "id"
+        ? "Belum ada catatan bacaan di dalam jurnalmu."
+        : "No reading records in your chronicle yet.",
+    start_first:
+      lang === "id" ? "Mulai Bacaan Pertama" : "Start First Reading",
+    delete_confirm:
+      lang === "id" ? "Hapus catatan ini?" : "Delete this record?",
+    clear_confirm:
+      lang === "id"
+        ? "Hapus SEMUA catatan jurnal? Tindakan ini tidak bisa dibatalkan."
+        : "Delete ALL journal entries? This action cannot be undone.",
+    notes_label: lang === "id" ? "Catatan Refleksi Pribadi" : "Personal Reflection Notes",
+    notes_placeholder:
+      lang === "id"
+        ? "Tulis refleksi, sinkronisitas, atau pertanyaanmu di sini..."
+        : "Write your reflections, synchronicities, or questions here...",
+    select_entry:
+      lang === "id"
+        ? "Pilih catatan di sebelah kiri untuk membuka kembali tebaran kartumu."
+        : "Select an entry on the left to revisit your spread.",
   };
 
   useEffect(() => {
+    const loaded = getJournal();
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setEntries(getJournal());
+    setEntries(loaded);
+    if (loaded.length > 0) {
+      setSelectedEntry(loaded[0]);
+    }
   }, []);
 
   const handleDelete = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
     if (confirm(t.delete_confirm)) {
       deleteEntry(id);
-      setEntries(getJournal());
-      if (selectedEntry?.id === id) setSelectedEntry(null);
+      const updated = getJournal();
+      setEntries(updated);
+      if (selectedEntry?.id === id) {
+        setSelectedEntry(updated[0] ?? null);
+      }
     }
   };
 
@@ -51,129 +86,180 @@ export default function JournalPage() {
   };
 
   const formatDate = (dateStr: string) => {
-    return new Date(dateStr).toLocaleDateString(lang === 'id' ? "id-ID" : "en-US", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit"
-    });
+    return new Date(dateStr).toLocaleDateString(
+      lang === "id" ? "id-ID" : "en-US",
+      {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      }
+    );
   };
 
   return (
-    <main className="min-h-screen p-6 md:p-12">
-      <div className="max-w-7xl mx-auto w-full">
+    <main className="min-h-screen px-6 py-8 md:px-12">
+      <div className="mx-auto w-full max-w-7xl">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6">
+        <div className="glass-panel mb-10 flex flex-col justify-between gap-6 rounded-3xl p-6 sm:p-8 md:flex-row md:items-center">
           <div>
-            <Link href="/" className="flex items-center gap-2 text-primary hover:text-secondary transition-colors mb-4">
-              <ArrowLeft className="w-5 h-5" />
+            <Link
+              href="/"
+              className="mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.28em] text-secondary transition-colors hover:text-primary"
+            >
+              <ArrowLeft className="h-4 w-4" />
               <span>{t.back}</span>
             </Link>
-            <h1 className="text-4xl font-serif text-primary">{t.title}</h1>
+            <div className="flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-primary" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-primary">
+                {t.badge}
+              </span>
+            </div>
+            <h1 className="mt-1 font-serif text-4xl font-bold text-on-background">
+              {t.title}
+            </h1>
           </div>
-          
+
           {entries.length > 0 && (
-            <button 
+            <button
+              type="button"
               onClick={handleClearAll}
-              className="text-red-400 hover:text-red-300 text-sm flex items-center gap-2 transition-colors"
+              className="inline-flex items-center gap-2 rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-red-300 transition hover:bg-red-500/20"
             >
-              <Trash2 className="w-4 h-4" />
+              <Trash2 className="h-4 w-4" />
               {t.clear_all}
             </button>
           )}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* List Section */}
-          <div className="lg:col-span-1 space-y-4 max-h-[70vh] overflow-y-auto pr-2 custom-scrollbar">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {/* Left Chronicle List */}
+          <div className="custom-scrollbar max-h-[75vh] space-y-4 overflow-y-auto pr-2 lg:col-span-1">
             {entries.length === 0 ? (
-              <div className="text-center py-12 glass rounded-2xl opacity-50">
-                <BookOpen className="w-12 h-12 mx-auto mb-4" />
-                <p>{t.no_entries}</p>
-                <Link href="/spread">
-                  <button className="text-primary underline mt-2">{t.start_first}</button>
+              <div className="glass-panel rounded-3xl p-10 text-center">
+                <BookOpen className="mx-auto mb-4 h-12 w-12 text-primary/50" />
+                <p className="text-sm text-on-surface-variant">{t.no_entries}</p>
+                <Link
+                  href="/spread"
+                  className="gold-gradient mt-6 inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-xs font-bold uppercase tracking-widest"
+                >
+                  {t.start_first}
                 </Link>
               </div>
             ) : (
-              entries.map((entry) => (
-                <motion.div
-                  key={entry.id}
-                  layoutId={entry.id}
-                  onClick={() => setSelectedEntry(entry)}
-                  className={`glass p-4 rounded-xl border-primary/10 hover:border-primary/40 cursor-pointer transition-all relative group ${selectedEntry?.id === entry.id ? 'border-primary bg-primary/5' : ''}`}
-                >
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-primary font-bold">{entry.spreadName}</h3>
-                    <button 
-                      onClick={(e) => handleDelete(entry.id, e)}
-                      className="opacity-0 group-hover:opacity-100 p-1 hover:text-red-400 transition-all"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs text-on-background/40 mb-3">
-                    <Calendar className="w-3 h-3" />
-                    {formatDate(entry.date)}
-                  </div>
-                  <div className="flex flex-wrap items-center gap-3">
-                    {entry.cards.map((c, i) => (
-                      <div
-                        key={i}
-                        className="relative h-16 w-10 overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-background via-surface to-background shadow-[0_18px_40px_-24px_rgba(0,0,0,0.65)]"
+              entries.map((entry) => {
+                const isActive = selectedEntry?.id === entry.id;
+                return (
+                  <motion.div
+                    key={entry.id}
+                    layoutId={entry.id}
+                    onClick={() => setSelectedEntry(entry)}
+                    className={`group relative cursor-pointer rounded-2xl border p-5 transition-all ${
+                      isActive
+                        ? "border-primary bg-primary/15 shadow-[0_0_35px_var(--bg-glow-1)]"
+                        : "glass border-primary/15 hover:border-primary/40"
+                    }`}
+                  >
+                    <div className="mb-2 flex items-start justify-between">
+                      <h3 className="font-serif text-lg font-bold text-on-background group-hover:text-primary transition-colors">
+                        {entry.spreadName}
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={(e) => handleDelete(entry.id, e)}
+                        className="rounded-lg p-1 text-on-surface-variant opacity-0 transition hover:bg-red-500/20 hover:text-red-300 group-hover:opacity-100"
                       >
-                        <div className="absolute inset-x-2 top-2 h-8 rounded-xl bg-white/5 blur-sm" />
-                        <div className="absolute inset-x-0 bottom-3 flex justify-center">
-                          <span className="h-1.5 w-6 rounded-full bg-primary/40 shadow-[0_0_16px_rgba(193,142,255,0.35)]" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))
+                        <Trash2 className="h-4 w-4" />
+                      </button>
+                    </div>
+
+                    <div className="mb-4 flex items-center gap-2 text-xs text-on-surface-variant">
+                      <Calendar className="h-3.5 w-3.5 text-secondary" />
+                      {formatDate(entry.date)}
+                    </div>
+
+                    {/* Mini Card Thumbnail Previews */}
+                    <div className="flex flex-wrap items-center gap-2">
+                      {entry.cards.map((c, i) => {
+                        const thumb = getTarotImageUrl(c.slug);
+                        return (
+                          <div
+                            key={i}
+                            className="relative h-14 w-9 overflow-hidden rounded-lg border border-primary/30 bg-surface-dim shadow-md"
+                          >
+                            {thumb && (
+                              <Image
+                                src={thumb}
+                                alt={c.slug}
+                                fill
+                                sizes="36px"
+                                className={`object-cover ${
+                                  c.isReversed ? "rotate-180" : ""
+                                }`}
+                              />
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                );
+              })
             )}
           </div>
 
-          {/* Detail Section */}
+          {/* Right Detail Sanctuary */}
           <div className="lg:col-span-2">
             <AnimatePresence mode="wait">
               {selectedEntry ? (
                 <motion.div
                   key={selectedEntry.id}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  className="glass p-8 rounded-3xl border-primary/20 sticky top-12"
+                  exit={{ opacity: 0, y: -16 }}
+                  className="glass-panel rounded-3xl p-6 sm:p-8"
                 >
-                  <h2 className="text-3xl font-serif text-primary mb-2">{selectedEntry.spreadName}</h2>
-                  <p className="text-sm text-on-background/40 mb-8 flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
-                    {formatDate(selectedEntry.date)}
-                  </p>
+                  <div className="border-b border-primary/15 pb-6">
+                    <h2 className="font-serif text-3xl font-bold text-on-background">
+                      {selectedEntry.spreadName}
+                    </h2>
+                    <p className="mt-2 flex items-center gap-2 text-xs text-on-surface-variant">
+                      <Calendar className="h-4 w-4 text-secondary" />
+                      {formatDate(selectedEntry.date)}
+                    </p>
+                  </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                  <div className="my-8 grid grid-cols-1 place-items-center gap-6 sm:grid-cols-2 xl:grid-cols-3">
                     {selectedEntry.cards.map((c, i) => {
                       const cardData = getCardBySlug(c.slug);
                       return (
-                        <div key={i} className="flex flex-col gap-3">
-                          <span className="text-[10px] uppercase tracking-[0.35em] text-primary/60">
+                        <div
+                          key={i}
+                          className="flex flex-col items-center gap-3 rounded-3xl border border-white/10 bg-surface-container-lowest/60 p-4"
+                        >
+                          <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-secondary">
                             {c.positionName}
                           </span>
-                          <div className="rounded-[34px] border border-white/10 bg-[radial-gradient(circle_at_top,_rgba(193,142,255,0.08),transparent_60%),linear-gradient(180deg,var(--bg-gradient-1),var(--bg-gradient-2))] p-4 shadow-[0_24px_80px_-48px_rgba(111,62,211,0.7)]">
-                            <TarotCard card={cardData} slug={c.slug} isRevealed />
-                          </div>
+                          <TarotCard
+                            card={cardData}
+                            slug={c.slug}
+                            isReversed={c.isReversed}
+                            isRevealed
+                          />
                         </div>
                       );
                     })}
                   </div>
 
-                  <div className="space-y-4">
-                    <h4 className="text-primary font-bold flex items-center gap-2">
-                      <BookOpen className="w-4 h-4" />
+                  <div className="space-y-3 border-t border-primary/15 pt-6">
+                    <h4 className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary">
+                      <BookOpen className="h-4 w-4 text-secondary" />
                       {t.notes_label}
                     </h4>
-                    <textarea 
-                      className="w-full bg-white/5 border border-primary/10 rounded-xl p-4 text-sm text-on-background/80 outline-none focus:border-primary/40 transition-all h-32"
+                    <textarea
+                      className="h-36 w-full rounded-2xl border border-primary/20 bg-surface-container-lowest/70 p-4 text-sm text-on-background outline-none transition focus:border-primary"
                       placeholder={t.notes_placeholder}
                       value={selectedEntry.notes}
                       onChange={(e) => {
@@ -186,9 +272,11 @@ export default function JournalPage() {
                   </div>
                 </motion.div>
               ) : (
-                <div className="h-full min-h-[400px] flex flex-col items-center justify-center glass rounded-3xl border-dashed border-primary/20 opacity-30 text-center p-12">
-                  <ChevronRight className="w-12 h-12 mb-4" />
-                  <p className="text-xl font-serif">{t.select_entry}</p>
+                <div className="glass-panel flex h-full min-h-[420px] flex-col items-center justify-center rounded-3xl border-dashed p-12 text-center opacity-60">
+                  <ChevronRight className="mb-3 h-10 w-10 text-primary" />
+                  <p className="font-serif text-xl text-on-surface-variant">
+                    {t.select_entry}
+                  </p>
                 </div>
               )}
             </AnimatePresence>

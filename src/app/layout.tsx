@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Header from "@/components/Header";
+import CosmicBackdrop from "@/components/CosmicBackdrop";
+import { SettingsProvider } from "@/context/SettingsContext";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body-md" });
@@ -44,8 +46,6 @@ export const metadata: Metadata = {
   },
 };
 
-import { SettingsProvider } from "@/context/SettingsContext";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,10 +53,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+      <body className={`${inter.variable} ${playfair.variable} antialiased relative min-h-screen`}>
         <SettingsProvider>
-          <Header />
-          {children}
+          <CosmicBackdrop />
+          <div className="relative z-10 flex min-h-screen flex-col">
+            <Header />
+            <div className="flex-1">{children}</div>
+          </div>
         </SettingsProvider>
       </body>
     </html>

@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Search, ArrowLeft } from "lucide-react";
+import { Search, ArrowLeft, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { getAllCards } from "@/lib/utils";
-
+import { getTarotImageUrl } from "@/components/TarotCard";
 import { useSettings } from "@/context/SettingsContext";
 
 export default function EncyclopediaPage() {
@@ -15,85 +16,164 @@ export default function EncyclopediaPage() {
   const [filterArcana, setFilterArcana] = useState<string>("all");
 
   const t = {
-    back: lang === 'id' ? 'Kembali' : 'Back',
-    title: lang === 'id' ? 'Ensiklopedia Kartu' : 'Card Encyclopedia',
-    desc: lang === 'id' ? 'Temukan arti tersembunyi dari setiap kartu tarot dengan nuansa visual yang lebih hidup dan modern.' : 'Discover the hidden meaning of each tarot card with a more vivid and modern visual touch.',
-    search_placeholder: lang === 'id' ? 'Cari kartu...' : 'Search cards...',
-    filter_all: lang === 'id' ? 'Semua' : 'All',
-    filter_major: 'Major',
-    filter_minor: 'Minor',
-    no_results: lang === 'id' ? 'Tidak ada kartu yang ditemukan.' : 'No cards found.'
+    back: lang === "id" ? "Kembali" : "Back",
+    badge: lang === "id" ? "Arsip 78 Arcana" : "78 Arcana Codex",
+    title: lang === "id" ? "Ensiklopedia Kartu" : "Card Encyclopedia",
+    desc:
+      lang === "id"
+        ? "Temukan arti tersembunyi dari setiap kartu tarot dengan nuansa visual esoteris yang hidup dan modern."
+        : "Discover the hidden meaning of each tarot card with a vivid, modern esoteric touch.",
+    search_placeholder:
+      lang === "id"
+        ? "Cari nama kartu atau kata kunci..."
+        : "Search card name or keyword...",
+    filter_all: lang === "id" ? "Semua" : "All",
+    filter_major: "Major",
+    filter_minor: "Minor",
+    no_results:
+      lang === "id"
+        ? "Tidak ada kartu yang ditemukan."
+        : "No cards found.",
   };
 
-  const filteredCards = Object.entries(allCards).filter(([ , card]) => {
-    const name = (lang === 'en' && card.name_en) ? card.name_en : card.name;
-    const keywords = (lang === 'en' && card.keywords_en) ? card.keywords_en : card.keywords;
-    
-    const matchesSearch = name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          keywords.some(kw => kw.toLowerCase().includes(searchTerm.toLowerCase()));
-    const matchesArcana = filterArcana === "all" || card.arcana === filterArcana;
-    return matchesSearch && matchesArcana;
+  const filters = [
+    { id: "all", label: t.filter_all },
+    { id: "major", label: t.filter_major },
+    { id: "minor", label: t.filter_minor },
+    { id: "wands", label: "🜂 Wands" },
+    { id: "cups", label: "🜄 Cups" },
+    { id: "swords", label: "🜁 Swords" },
+    { id: "pentacles", label: "🜃 Pentacles" },
+  ];
+
+  const filteredCards = Object.entries(allCards).filter(([, card]) => {
+    const name = lang === "en" && card.name_en ? card.name_en : card.name;
+    const keywords =
+      lang === "en" && card.keywords_en ? card.keywords_en : card.keywords;
+
+    const matchesSearch =
+      name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      keywords.some((kw) =>
+        kw.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+    const matchesFilter =
+      filterArcana === "all" ||
+      card.arcana === filterArcana ||
+      card.suit === filterArcana;
+
+    return matchesSearch && matchesFilter;
   });
 
   return (
-    <main className="min-h-screen p-6 md:p-12">
-      <div className="max-w-7xl mx-auto w-full">
-        <div className="glass-panel-interactive p-8 rounded-3xl border border-secondary/20 shadow-[0_26px_80px_-40px_rgba(139,92,255,0.35)] mb-12">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+    <main className="min-h-screen px-6 py-8 md:px-12">
+      <div className="mx-auto w-full max-w-7xl">
+        {/* Top Grimoire Header */}
+        <div className="glass-panel mb-10 rounded-3xl p-6 sm:p-8">
+          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div>
-              <Link href="/" className="inline-flex items-center gap-2 text-primary hover:text-tertiary transition-colors mb-4">
-                <ArrowLeft className="w-5 h-5" />
-                <span className="text-sm uppercase tracking-[0.35em]">{t.back}</span>
+              <Link
+                href="/"
+                className="mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-secondary transition-colors hover:text-primary"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                <span>{t.back}</span>
               </Link>
-              <h1 className="text-5xl md:text-6xl font-serif text-on-background/95 leading-tight">{t.title}</h1>
-              <p className="mt-3 max-w-2xl text-on-background/70">{t.desc}</p>
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-4 w-4 text-primary" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-primary">
+                  {t.badge}
+                </span>
+              </div>
+              <h1 className="mt-1 font-serif text-4xl font-bold leading-tight text-on-background md:text-5xl">
+                {t.title}
+              </h1>
+              <p className="mt-2 max-w-2xl text-sm text-on-surface-variant">
+                {t.desc}
+              </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-              <div className="relative w-full sm:w-[320px]">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-on-background/50" />
-                <input 
-                  type="text"
-                  placeholder={t.search_placeholder}
-                  className="w-full rounded-2xl border border-secondary/20 bg-white/5 px-12 py-3 text-on-background outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-              </div>
-
-              <div className="grid grid-cols-3 gap-2">
-                {['all', 'major', 'minor'].map((value) => (
-                  <button
-                    key={value}
-                    onClick={() => setFilterArcana(value)}
-                    className={`rounded-2xl px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] transition ${filterArcana === value ? 'bg-primary text-on-primary shadow-[0_10px_30px_-20px_rgba(139,92,255,0.55)]' : 'bg-white/5 text-on-background/70 hover:bg-white/10'}`}
-                  >
-                    {value === 'all' ? t.filter_all : value === 'major' ? t.filter_major : t.filter_minor}
-                  </button>
-                ))}
-              </div>
+            <div className="relative w-full lg:w-[340px]">
+              <Search className=" absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-on-surface-variant" />
+              <input
+                type="text"
+                placeholder={t.search_placeholder}
+                className="w-full rounded-2xl border border-primary/25 bg-surface-container-lowest/70 py-3 pl-11 pr-4 text-sm text-on-background outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
             </div>
+          </div>
+
+          {/* Filter Pills */}
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-primary/15 pt-5">
+            <div className="flex flex-wrap gap-2">
+              {filters.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => setFilterArcana(item.id)}
+                  className={`rounded-xl px-4 py-2 text-xs font-bold uppercase tracking-wider transition ${
+                    filterArcana === item.id
+                      ? "gold-gradient text-on-primary"
+                      : "border border-primary/15 bg-white/5 text-on-background/75 hover:border-primary/40 hover:bg-white/10"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+            <span className="text-xs font-semibold text-on-surface-variant">
+              {filteredCards.length} / 78{" "}
+              {lang === "id" ? "Kartu" : "Cards"}
+            </span>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {/* Card Grid */}
+        <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {filteredCards.map(([slug, card]) => {
-            const name = (lang === 'en' && card.name_en) ? card.name_en : card.name;
+            const name =
+              lang === "en" && card.name_en ? card.name_en : card.name;
+            const imgUrl = getTarotImageUrl(slug);
+
             return (
-              <Link key={slug} href={`/kartu/${slug}`}> 
+              <Link key={slug} href={`/kartu/${slug}`}>
                 <motion.div
-                  whileHover={{ y: -8 }}
-                  className="group rounded-[28px] border border-secondary/15 bg-white/5 p-4 shadow-[0_20px_50px_-30px_rgba(17,24,39,0.8)] transition-all duration-300 hover:border-primary/40 hover:bg-white/10"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="glass-panel-interactive group flex h-full flex-col justify-between overflow-hidden rounded-[24px] p-3"
                 >
-                  <div className="relative overflow-hidden rounded-3xl border border-secondary/15 bg-gradient-to-br from-surface-container to-surface-container-high p-6 shadow-inner">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(139,92,255,0.24),transparent_40%)]" />
-                    <div className="relative flex h-[180px] flex-col items-center justify-center gap-3 text-center">
-                      <span className="text-primary text-4xl font-serif opacity-90">#{card.number}</span>
-                      <h3 className="text-on-background font-semibold text-base leading-tight group-hover:text-primary transition-colors">{name}</h3>
-                    </div>
+                  <div className="relative aspect-[3/5] w-full overflow-hidden rounded-2xl border border-primary/25 bg-surface-dim">
+                    {imgUrl ? (
+                      <Image
+                        src={imgUrl}
+                        alt={name}
+                        fill
+                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 25vw, 180px"
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full flex-col items-center justify-center p-4 text-center">
+                        <span className="font-serif text-3xl text-primary">
+                          #{card.number}
+                        </span>
+                      </div>
+                    )}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
+                    <span className="absolute left-2.5 top-2 rounded-md border border-white/15 bg-black/60 px-2 py-0.5 text-[10px] font-bold text-secondary backdrop-blur-md">
+                      #{card.number}
+                    </span>
                   </div>
-                  <div className="mt-4 text-center">
-                    <p className="text-[10px] uppercase tracking-[0.35em] text-on-background/50">{card.arcana}</p>
+
+                  <div className="mt-3 px-1 text-center">
+                    <h3 className="line-clamp-1 font-serif text-sm font-bold text-on-background transition-colors group-hover:text-primary">
+                      {name}
+                    </h3>
+                    <p className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.28em] text-on-surface-variant/75">
+                      {card.arcana === "major"
+                        ? "Major Arcana"
+                        : card.suit || "Minor"}
+                    </p>
                   </div>
                 </motion.div>
               </Link>
@@ -102,8 +182,8 @@ export default function EncyclopediaPage() {
         </div>
 
         {filteredCards.length === 0 && (
-          <div className="text-center py-24 opacity-60">
-            <p className="text-on-background/80">{t.no_results}</p>
+          <div className="glass-panel py-20 text-center rounded-3xl">
+            <p className="text-on-surface-variant">{t.no_results}</p>
           </div>
         )}
       </div>
